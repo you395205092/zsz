@@ -1,0 +1,91 @@
+﻿@model ZSZ.DTO.HouseDTO[]
+@{
+    ViewBag.Title = "房源列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    #pager li {
+            float:left;margin-left:5px;color:purple;
+    }
+    .curPager {
+        font-size:xx-large    
+    }
+</style>
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 房源管理 <span class="c-gray en">&gt;</span> 房源列表 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <button id="btnRebuildAll">全部重新生成静态页</button>
+<div class="pd-20">
+        <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="layer_show('添加权限项','/House/Add','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加房源</a></span> <span class="r">共有数据：<strong>@Model.Length</strong> 条</span> </div>
+        <table class="table table-border table-bordered table-bg">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="9">房源列表</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="25"><input type="checkbox" name="" value=""></th>
+                    <th width="150">区域</th>
+                    <th width="90">小区名</th>
+                    <th width="90">地段</th>
+                    <th width="90">租金</th>
+                    <th width="90">房型</th>
+                    <th width="90">面积</th>
+                    <th width="90">装修</th>
+                    <th width="100">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var house in Model)
+            {
+                <tr class="text-c">
+                    <td><input type="checkbox" value="1" name=""></td>
+                    <td>@house.RegionName</td>
+                    <td>@house.CommunityName</td>
+                    <td>@house.CommunityLocation</td>
+                    <td>@house.MonthRent</td>
+                    <td>@house.RoomTypeName</td>
+                    <td>@house.Area</td>
+                    <td>@house.DecorateStatusName</td>
+                    <td class="td-manage">
+                        <a title="编辑" href="javascript:;" onclick="layer_show('房源编辑', '/House/Edit/@house.Id',  '800', '500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> 
+                        <a title="删除" href="javascript:;" onclick="house_del(this,@house.Id)" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
+                        <a title="查看" href="javascript:;" onclick="layer_show('查看图片', '/House/PicList/@house.Id',  '800', '500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe613;</i></a>
+                        <a title="上传图片" href="javascript:;" onclick="layer_show('上传图片', '/House/PicUpload?houseId=@house.Id',  '800', '500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe642;</i></a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        @{ 
+            var pager = new ZSZ.CommonMVC.RuPengPager();
+            pager.CurrentPageClassName = "curPager";
+            pager.MaxPagerCount = 10;
+            pager.PageIndex = (int)ViewBag.pageIndex;//这些数据，cshtml不知道，就必须让Action传递给我们
+            //对于所有cshtml要用到，但是又获取不到的数据，都由Action来获取，然后放到ViewBag或者Model中传递给cshtml
+            pager.PageSize = 10;
+            pager.TotalCount = (int)ViewBag.totalCount;
+            pager.UrlPattern = "/House/List?typeId="+ ViewBag.typeId+ "&pageIndex={pn}";
+        }
+        <div id="pager">@Html.Raw(pager.GetPagerHtml())</div>
+    </div>
+@section FooterScript
+{
+<script type="text/javascript">
+
+function house_del(obj, id) {
+    alert("自己做");
+}
+
+$(function(){
+    $("#btnRebuildAll").click(function(){
+        $.ajax({
+            url:"/House/RebuildAllStaticPage",type:"post",dataType:"json",
+            success:function(res){
+                alert(res.status);
+            },
+            error:function(){
+                alert("网络醋五");
+            }
+        });
+    });
+});
+</script>
+}

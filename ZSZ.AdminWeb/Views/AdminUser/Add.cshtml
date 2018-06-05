@@ -1,0 +1,116 @@
+﻿@model ZSZ.AdminWeb.Models.AdminUserAddViewModel
+
+@{
+    ViewBag.Title = "新增操作员";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="formAdd">
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>手机号：</label>
+        <div class="formControls col-5">
+            <input type="text" class="input-text" name="phoneNum" id="phoneNum" datatype="m" nullmsg="手机号不能为空" />
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>姓名：</label>
+        <div class="formControls col-5">
+            <input type="text" class="input-text" name="name" id="name" datatype="*2-10" nullmsg="姓名不能为空" />
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>密码：</label>
+        <div class="formControls col-5">
+            <input type="password" class="input-text" name="password" id="password" datatype="*6-10" nullmsg="密码不能为空" />
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>确认密码：</label>
+        <div class="formControls col-5">
+            <input type="password" class="input-text" name="password2" id="password2" datatype="*6-10" recheck="password" nullmsg="确认密码不能为空" />
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>邮箱：</label>
+        <div class="formControls col-5">
+            <input type="text" class="input-text" name="email" id="email" datatype="e" nullmsg="邮箱不能为空" />
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>城市：</label>
+        <div class="formControls col-5">
+           @Html.DropDownList("cityId",new SelectList(Model.Cities,
+                nameof(CityDTO.Id), nameof(CityDTO.Name)))
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        @foreach (var perm in Model.Roles)
+        {
+            <div class="col-xs-12 col-sm-3">
+                <input type="checkbox" id="RoleIds_@perm.Id" name="RoleIds" value="@perm.Id" />
+                <label for="RoleIds_@perm.Id">@perm.Name</label>
+            </div>
+        }
+    </div>
+        <input type="button" value="保存" id="btnSave" />
+</form>
+
+@section FooterScript
+{
+    <script type="text/javascript">
+        var saveAjax = function () {
+            var formData = $("#formAdd").serializeArray();
+            $.ajax({
+                url: "/AdminUser/Add",
+                type: "post",
+                data:formData,
+                dataType: "json",
+                success: function (res) {
+                    if(res.status=="ok")
+                    {
+                        parent.location.reload();//刷新父窗口
+                    }
+                    else
+                    {
+                        alert(res.errorMsg);
+                    }
+                },
+                error: function () { alert("请求出错"); }
+            });
+        };
+        $(function () {
+            var validForm = $("#formAdd").Validform({tiptype:2});
+            $("#btnSave").click(function () {
+                if (validForm.check(false))
+                {
+                    saveAjax();
+                }                
+            });
+            //焦点离开的时候检查手机号的合法性（是否存在）
+            $("#phoneNum").blur(function () {
+                var phoneNum = $(this).val();
+                if (phoneNum.length <= 0) return;
+                $.ajax({
+                    url: "/AdminUser/CheckPhoneNum", dataType: "json", type: "post",
+                    data: { phoneNum: phoneNum },
+                    success:function(res)
+                    {
+                        if (res.status == "exists")
+                        {
+                            layer.msg('这个手机号已经被其他人使用了!', { icon: 2, time: 2000 });
+                        }
+                    },
+                    error:function()
+                    {
+                        alert("网络通讯错误");
+                    }
+                });
+            });
+        });
+    </script>
+}

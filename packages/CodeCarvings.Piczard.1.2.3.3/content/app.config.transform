@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+<configuration>
+
+ <configSections>
+   <!-- Setup the Piczard configuration sections -->
+   <sectionGroup name="codeCarvings.piczard">
+     <section name="coreSettings" type="CodeCarvings.Piczard.Configuration.CoreSettingsSectionHandler, CodeCarvings.Piczard" requirePermission="false"/>
+   </sectionGroup>
+ </configSections>
+ 
+ <codeCarvings.piczard>
+   <coreSettings>
+     <drawing maxImageSize="5000, 5000" />
+     <imageArchiver defaultJpegQuality="92" defaultQuantizeGifImages="true" />
+     <security defaultEncryptionKey="Place here your random key (alphanumeric / 10..20 chars)" />
+     <plugins>
+       <!-- Register here your Piczard Plugins. -->
+       
+        <!-- === EXAMPLE: DeBrand Plugin for Piczard by Digivogue - http://digivogue.com/products/Piczard-DeBrand/ ===
+    		<plugin type="Digivogue.Plugins.Piczard.DeBrand.DeBrandPiczardPlugin, Digivogue.Plugins.Piczard.DeBrand">
+    			<license number="..." key="..." />
+    		</plugin>
+    		========= -->          
+     </plugins>
+   </coreSettings>
+ </codeCarvings.piczard>
+ 
+</configuration>

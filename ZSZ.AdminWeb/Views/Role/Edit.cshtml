@@ -1,0 +1,52 @@
+﻿@model ZSZ.AdminWeb.Models.RoleEditGetModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="formEdit">
+    <input type="hidden" name="id" id="id" value="@Model.Role.Id"/>
+    名称：<input type="text" name="name" id="name" value="@Model.Role.Name" />
+    <div class="row cl">
+        @foreach (var perm in Model.AllPerms)
+        {
+            <div class="col-xs-12 col-sm-3">
+                <input type="checkbox" checked="@Model.RolePerms.Select(p=>p.Id).Contains(perm.Id)" id="PermissionIds_@perm.Id" name="PermissionIds" value="@perm.Id" />
+                <label for="PermissionIds_@perm.Id">@perm.Description</label>
+            </div>
+        }
+    </div>
+    <input type="button" value="保存" id="btnSave" />
+</form>
+@section FooterScript
+{
+    <script type="text/javascript">
+        var saveAjax = function () {
+            var formData = $("#formEdit").serializeArray();
+            var id = $("#id").val();
+            var name = $("#name").val();
+            var description = $("#description").val();
+            $.ajax({
+                url: "/Role/Edit",
+                type: "post",
+                data:formData,
+                dataType: "json",
+                success: function (res) {
+                    if(res.status=="ok")
+                    {
+                        //alert("ok");
+                        parent.location.reload();//刷新父窗口
+                    }
+                    else
+                    {
+                        alert("error");
+                    }
+                },
+                error: function () { alert("请求出错"); }
+            });
+        };
+        $(function(){
+            $("#btnSave").click(saveAjax);
+        });
+    </script>
+}

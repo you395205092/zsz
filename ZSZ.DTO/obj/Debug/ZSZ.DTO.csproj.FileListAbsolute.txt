@@ -1,0 +1,5 @@
+C:\Users\Administrator\Desktop\zsz\ZSZ.DTO\bin\Debug\ZSZ.DTO.dll
+C:\Users\Administrator\Desktop\zsz\ZSZ.DTO\bin\Debug\ZSZ.DTO.pdb
+C:\Users\Administrator\Desktop\zsz\ZSZ.DTO\obj\Debug\ZSZ.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\zsz\ZSZ.DTO\obj\Debug\ZSZ.DTO.dll
+C:\Users\Administrator\Desktop\zsz\ZSZ.DTO\obj\Debug\ZSZ.DTO.pdb

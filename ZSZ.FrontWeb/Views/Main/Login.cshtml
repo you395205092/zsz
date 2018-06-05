@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="headertwo clearfloat" id="header">
+    <a href="javascript:history.go(-1)" class="fl box-s"><i class="iconfont icon-arrow-l fl"></i></a>
+    <p class="fl">登录</p>
+</div>
+
+<div class="sign clearfloat" id="main">
+    <ul>
+        <li class="clearfloat">
+            <i class="iconfont icon-phone fl"></i>
+            <input type="text" id="phoneNum" value="" placeholder="请输入手机号" class="fl phone" />
+        </li>
+        <li class="clearfloat">
+            <i class="iconfont icon-lock fl"></i>
+            <input type="password" id="password" value="" placeholder="请输入密码" class="fl phone" />
+        </li>
+    </ul>
+    <a id="btnLogin" href="#" class="pay-btn clearfloat">
+        登录
+    </a>
+    <div class="bottom clearfloat">
+        <p class="fl">
+            还不是会员？
+            <a href="~/Main/Register">立即注册</a>
+        </p>
+        <a href="~/User/ForgotPassword" class="fr">忘记密码？</a>
+    </div>
+</div>
+
+
+@section FooterScript
+{
+<script type="text/javascript">
+    $(function () {
+        $("#btnLogin").click(function () {
+            var phoneNum = $("#phoneNum").val();
+            var password = $("#password").val();
+            $.ajax({
+                url: "/Main/Login", type: "post", dataType: "json",
+                data:{phoneNum:phoneNum,password:password},
+                success:function(res)
+                {
+                    if(res.status=="ok")
+                    {
+                        location.href = "/Main/Index";
+                    }
+                    else
+                    {
+                        alert(res.errorMsg);
+                    }
+                },
+                error:function()
+                {
+                    alert("网络错误");
+                }
+            });
+        });
+    });
+</script>
+}

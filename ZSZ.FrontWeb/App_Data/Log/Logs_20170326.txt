@@ -1,0 +1,89 @@
+2017-03-26 09:58:10,726 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/26 9:58:10 +08:00
+ 打开了连接
+2017-03-26 09:58:10,860 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Cities] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-26 09:58:10,860 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-26 09:58:10,862 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '北京' (Type = String, Size = 4000)
+
+2017-03-26 09:58:10,862 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/26 9:58:10 +08:00
+ 执行
+2017-03-26 09:58:10,891 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 29 毫秒内完成，结果为: SqlDataReader
+
+2017-03-26 09:58:10,891 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-26 09:58:10,896 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/26 9:58:10 +08:00
+ 关闭了连接
+2017-03-26 09:58:10,904 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/26 9:58:10 +08:00
+ 打开了连接
+2017-03-26 09:58:10,906 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/26 9:58:10 +08:00
+ 启动了事务
+2017-03-26 09:58:10,912 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_Cities]([Name], [CreateDateTime], [IsDeleted])
+VALUES (@0, @1, @2)
+SELECT [Id]
+FROM [dbo].[T_Cities]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+2017-03-26 09:58:10,912 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-26 09:58:10,912 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '北京' (Type = String, Size = 20)
+
+2017-03-26 09:58:10,912 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '2017/3/26 9:58:10' (Type = DateTime2)
+
+2017-03-26 09:58:10,912 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @2: 'False' (Type = Boolean)
+
+2017-03-26 09:58:10,912 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/26 9:58:10 +08:00
+ 执行
+2017-03-26 09:58:10,939 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 27 毫秒内完成，结果为: SqlDataReader
+
+2017-03-26 09:58:10,939 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-26 09:58:10,941 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/26 9:58:10 +08:00
+ 提交了事务
+2017-03-26 09:58:10,941 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/26 9:58:10 +08:00
+ 关闭了连接
+2017-03-26 09:58:42,975 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/26 9:58:42 +08:00
+ 打开了连接
+2017-03-26 09:58:42,975 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Cities] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-26 09:58:42,975 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-26 09:58:42,975 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '北京' (Type = String, Size = 4000)
+
+2017-03-26 09:58:42,975 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/26 9:58:42 +08:00
+ 执行
+2017-03-26 09:58:42,985 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 9 毫秒内完成，结果为: SqlDataReader
+
+2017-03-26 09:58:42,985 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-26 09:58:42,985 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/26 9:58:42 +08:00
+ 关闭了连接
+2017-03-26 09:58:47,802 [7] ERROR ZSZ.FrontWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.ArgumentException: 城市已经存在
+   在 ZSZ.Service.CityService.AddNew(String cityName) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.Service\CityService.cs:行号 27
+   在 ZSZ.FrontWeb.Controllers.MainController.Index() 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.FrontWeb\Controllers\MainController.cs:行号 16
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)

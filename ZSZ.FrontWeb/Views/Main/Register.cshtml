@@ -1,0 +1,125 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="headertwo clearfloat" id="header">
+    <a href="javascript:history.go(-1)" class="fl box-s"><i class="iconfont icon-arrow-l fl"></i></a>
+    <p class="fl">用户注册</p>
+</div>
+
+<div class="register clearfloat" id="main">
+    <form id="formReg">
+        <ul>
+            <li class="clearfloat">
+                <p class="tit fl">手机号</p>
+                <input type="text" id="phoneNum" name="PhoneNum" value="" class="shuru fl" placeholder="请输入手机号码" />
+            </li>
+            <li class="clearfloat">
+                <p class="tit fl">验证码</p>
+                <input type="text" id="" value="" name="SmsCode" class="shuru shurutwo fl" placeholder="请输入短信验证码" />
+                <a href="#loginmodalt" id="modaltrigger">
+                    <input type="button" id="" value="获取短信验证码" class="btn fr" />
+                </a>
+            </li>
+            <li class="clearfloat">
+                <p class="tit fl">密码</p>
+                <input type="password" id="" name="Password" value="" class="shuru fl" placeholder="请设置密码" />
+            </li>
+            <li class="clearfloat">
+                <p class="tit fl">确认密码</p>
+                <input type="password" id="" value="" name="Password2" class="shuru fl" placeholder="请再次输入密码" />
+            </li>
+        </ul>
+        <a href="#" id="btnReg" class="pay-btn clearfloat">
+            注册
+        </a>
+        <div class="bottom clearfloat">
+            <p class="fl">
+                已有账号？
+                <a href="register.html">立即登录</a>
+            </p>
+        </div>
+    </form>
+</div>
+
+<!--弹窗内容 star-->
+<div id="loginmodalt" class="box-s loginmodaltwo" style="display:none;">
+    <div class="top clearfloat box-s">
+        <p class="tit">请输入图片验证码</p>
+        <div class="xia clearfloat">
+            <input type="text" id="verfiyCode" value="" class="yzm fl" placeholder="填写图片验证码" />
+            <span class="fl"><img id="imgVerifyCode" src="~/Main/CreateVerifyCode" /></span>
+            <i class="iconfont icon-shuaxin fr"></i>
+        </div>
+    </div>
+    <form id="loginform">
+        <div class="center fl"><input type="button" name="loginbtn" id="btnClose" class="hidemodal" value="取消" tabindex="3"></div>
+        <div class="center fl"><input type="button" name="loginbtn" id="btnSendSMS" value="确定" tabindex="3"></div>
+    </form>
+</div>
+<!--弹窗内容 end-->
+@section FooterScript
+{
+    <script type="text/javascript" src="~/js/jquery.leanModal.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.SuperSlide.2.1.js"></script>
+<script type="text/javascript">
+    $('#modaltrigger').leanModal({
+        top: 110,
+        overlay: 0.45,
+        closeButton: ".hidemodal"
+    }).click(function () {//每次打开对话框的时候都刷新一下验证码
+        $("#imgVerifyCode").attr("src", "/Main/CreateVerifyCode?ts" + Math.random());
+    });
+    $(function () {
+        $("#btnSendSMS").click(function () {
+            var phoneNum = $("#phoneNum").val();
+            var verifyCode = $("#verfiyCode").val();
+            $.ajax({
+                url: "/Main/SendSmsVerifyCode", type: "post", dataType: "json",
+                data: { phoneNum: phoneNum, verifyCode: verifyCode },
+                success:function(res)
+                {
+                    if(res.status=="ok")
+                    {
+                        //关闭对话框
+                        $("#lean_overlay").fadeOut(200);
+                        $("#loginmodalt").css({ "display": "none" });
+                    }
+                    else
+                    {
+                        alert(res.errorMsg);
+                    }
+                },
+                error:function()
+                {
+                    alert("请求发送短信验证码出错");
+                }
+            });
+           
+        });
+
+        $("#btnReg").click(function () {
+            var formData = $("#formReg").serializeArray();
+            $.ajax({
+                url: "/Main/Register", type: "post", dataType: "json",
+                data: formData,
+                success:function(res)
+                {
+                    if(res.status=="ok")
+                    {
+                        alert("注册成功");
+                        location.href = "/Main/Login";
+                    }
+                    else
+                    {
+                        alert(res.errorMsg);
+                    }
+                },
+                error:function()
+                {
+                    alert("网络通讯错误");
+                }
+            });
+        });
+    });
+</script>
+}

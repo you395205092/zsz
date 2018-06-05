@@ -1,0 +1,85 @@
+﻿@model ZSZ.DTO.HouseAppointmentDTO[]
+@{
+    ViewBag.Title = "预约看房列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    #pager li {
+            float:left;margin-left:5px;color:purple;
+    }
+    .curPager {
+        font-size:xx-large    
+    }
+</style>
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 房源管理 <span class="c-gray en">&gt;</span> 房源列表 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="pd-20">
+        <table class="table table-border table-bordered table-bg">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="9">预约看房列表</th>
+                </tr>
+                <tr class="text-c">
+                    <th width="150">姓名</th>
+                    <th width="90">电话</th>
+                    <th width="90">预约时间</th>
+                    <th width="90">看房时间</th>
+                    <th width="90">小区</th>
+                    <th width="90">地址</th>
+                    <th width="90">状态</th>
+                    <th width="90">跟进员工</th>
+                    <th width="90">查看房源</th>
+                    <th width="100">接单</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var app in Model)
+            {
+                <tr class="text-c">
+                    <td>@app.Name</td>
+                    <td>@app.PhoneNum</td>
+                    <td>@app.CreateDateTime</td>
+                    <td>@app.VisitDate</td>
+                    <td>@app.CommunityName</td>
+                    <td>@app.HouseAddress</td>
+                    <td>@app.Status</td>
+                    <td>@app.FollowAdminUserName</td>
+                    <td><a href="~/House/Edit/@app.HouseId" target="_blank">查看房源</a></td>
+                    <td class="td-manage">
+                        <a title="抢单" href="javascript:;" onclick="follow(@app.Id)" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6d0;</i></a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        
+    </div>
+@section FooterScript
+{
+<script type="text/javascript">
+
+function follow(appId) {
+    $.ajax({
+        url:"/HouseAppointment/Follow",type:"post",dataType:"json",
+        data:{appId:appId},
+        success:function(res)
+        {
+            if(res.status=="ok")
+            {
+                alert("抢单成功");
+            }
+            else if(res.status=="fail")
+            {
+                alert("抢单失败");
+            }
+            else
+            {
+                alert("未知错误");
+            }
+        },
+        error:function(){
+            alert("网络错误");
+        }
+    });
+}
+</script>
+}

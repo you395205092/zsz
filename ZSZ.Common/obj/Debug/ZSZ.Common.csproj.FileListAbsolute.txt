@@ -1,0 +1,5 @@
+C:\Users\Administrator\Desktop\zsz\ZSZ.Common\bin\Debug\ZSZ.Common.dll
+C:\Users\Administrator\Desktop\zsz\ZSZ.Common\bin\Debug\ZSZ.Common.pdb
+C:\Users\Administrator\Desktop\zsz\ZSZ.Common\obj\Debug\ZSZ.Common.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\zsz\ZSZ.Common\obj\Debug\ZSZ.Common.dll
+C:\Users\Administrator\Desktop\zsz\ZSZ.Common\obj\Debug\ZSZ.Common.pdb

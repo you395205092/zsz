@@ -1,0 +1,134 @@
+﻿@using ZSZ.CommonMVC
+@model RegionDTO[]
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="~/js/menu.js"></script>
+<script type="text/javascript" src="~/js/template.js"></script>
+
+<div class="headertwo clearfloat" id="header">
+    <a href="javascript:history.go(-1)" class="fl box-s"><i class="iconfont icon-arrow-l fl"></i></a>
+    <p class="fl">北京</p>
+    <a href="javascript:history.go(-1)" class="fr"><i class="iconfont icon-sousuo fl"></i></a>
+</div>
+<div class="clearfloat" id="main">
+    <div class="menu-list clearfloat am-sharetwo">
+        <ul class="yiji" id="oe_menu">
+            <li>
+                <a href="#" class="inactive">区域<i></i></a>
+                <ul style="display: none">
+                    <li><a href="~/House/Search2?@(MVCHelper.RemoveQueryString(Request.QueryString,"RegionId"))">全部</a></li>
+                @foreach (var region in Model)
+                {
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"RegionId",region.Id.ToString()))">@region.Name</a></li>
+                }
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="inactive">租金<i></i></a>
+                <ul style="display: none">
+                    <li><a href="~/House/Search2?@(Html.Raw(MVCHelper.RemoveQueryString(Request.QueryString,"MonthRent")))">全部</a></li>
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","*-100"))">100元以下</a></li>                    
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","100-200"))">100-200元</a></li>
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","201-500"))">201-500元</a></li>
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","501-800"))">501-800元</a></li>
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","801-1000"))">801-1000元</a></li>
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","1001-*"))">1000元以上</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="inactive">排序<i></i></a>
+                <ul style="display: none">
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","MonthRentAsc"))">租金从低到高</a></li>
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","MonthRentDesc"))">租金从高到低</a></li>
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","AreaAsc"))">面积从小到大</a></li>
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","AreaDesc"))">面积从大到小</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="recom clearfloat recomtwo">
+        <div class="content clearfloat box-s">
+            <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--数据列表-->
+                    <ul class="mui-table-view mui-table-view-chevron" id="ul1">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section FooterScript
+{
+<script type="text/javascript" src="~/js/psong.js"></script>
+<script type="text/javascript">
+    var pageIndex = 1;//当前数据页码
+    mui.init({
+        pullRefresh: {
+            container: refreshContainer,//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+            up: {
+                height: 50,//可选.默认50.触发上拉加载拖动距离
+                auto: true,//可选,默认false.自动上拉加载一次
+                contentrefresh: "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+                contentnomore: '没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
+                callback: function () {
+                    var prThis = this;
+                    $.ajax({
+                        url: "/House/LoadMore" + location.search + "&pageIndex=" + pageIndex,
+                        type: "post", dataType: "json",
+                        success:function(res)
+                        {
+                            //alert(res);
+                            pageIndex++;//页码++
+                            var hasMoreData = (res.data.length == 10);//是否有更多的数据
+                            //for (var i = 0; i < res.data.length;i++)
+                            //{
+                                //$("<li>"+res.data[i].communityName+"</li>").appendTo($("#ul1"));
+                            //}
+                            var html = template('housesList', { houses: res.data });
+                            //alert(html);
+                            $("#ul1").append($(html));
+                            prThis.endPullupToRefresh(!hasMoreData);
+                            //this.endPullupToRefresh(!hasMoreData);
+                        },
+                        error: function () {
+                            alert("加载数据失败");
+                        }
+                    });
+
+                    this.endPullupToRefresh(false);
+                } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+            }
+        }
+    });
+</script>
+<script id="housesList" type="text/html">
+    {{each houses as h}}
+    <div class="list clearfloat fl box-s">
+        <a href="/{{h.id}}.html">
+            <!--<a href="/House/Index/{{h.id}}">-->
+            <div class="tu clearfloat">
+                <span></span>
+                <img src="{{h.firstThumbUrl}}" />
+            </div>
+            <div class="right clearfloat">
+                <div class="tit clearfloat">
+                    <p class="fl">{{h.communityName}}</p>
+                    <span class="fr">{{h.monthRent}}<samp>元/月</samp></span>
+                </div>
+                <p class="recom-jianjie">{{h.roomTypeName}}   |  {{h.area}}m²  |  {{h.decorateStatusName}}</p>
+                <div class="recom-bottom clearfloat">
+                    <span><i class="iconfont icon-duihao"></i>随时住</span>
+                    <span><i class="iconfont icon-duihao"></i>家电齐全</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    {{/each}}
+</script>
+}

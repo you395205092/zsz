@@ -1,0 +1,68 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <!-- Setup the Piczard configuration sections -->
+    <sectionGroup name="codeCarvings.piczard">
+      <section name="coreSettings" type="CodeCarvings.Piczard.Configuration.CoreSettingsSectionHandler, CodeCarvings.Piczard" requirePermission="false"/>
+      <section name="webSettings" type="CodeCarvings.Piczard.Configuration.WebSettingsSectionHandler, CodeCarvings.Piczard" requirePermission="false"/>
+    </sectionGroup>
+  </configSections>
+
+  <!-- Piczard configuration sections -->
+  <codeCarvings.piczard>
+    <coreSettings>
+      <drawing maxImageSize="5000, 5000" />
+      <imageArchiver defaultJpegQuality="92" defaultQuantizeGifImages="true" />
+      <security defaultEncryptionKey="Place here your random key (alphanumeric / 10..20 chars)" />
+      <plugins>
+        <!-- Register here your Piczard Plugins. -->
+        
+        <!-- === EXAMPLE: DeBrand Plugin for Piczard by Digivogue - http://digivogue.com/products/Piczard-DeBrand/ ===
+			<plugin type="Digivogue.Plugins.Piczard.DeBrand.DeBrandPiczardPlugin, Digivogue.Plugins.Piczard.DeBrand">
+				<license number="..." key="..." />
+			</plugin>
+			========= -->           
+      </plugins>
+    </coreSettings>
+    <webSettings>
+      <webResource enableCompression="true" />
+      <pictureTrimmer autoDeleteTemporaryFiles="true" />
+      <temporaryFileManager folderPath="~/App_Data" autoDeleteFiles="true" maxFileLifeTime="180" />
+    </webSettings>
+  </codeCarvings.piczard>
+  
+  <!-- Allow * Access to the Piczard HttpHandler (required when using Asp.Net Authentication) -->
+  <location path="piczardWebResource.ashx">
+    <system.web>
+      <authorization>
+        <allow users="*" />
+      </authorization>
+    </system.web>
+  </location>  
+
+  <system.web>
+    <pages>
+      <controls>
+        <add tagPrefix="ccPiczard" namespace="CodeCarvings.Piczard.Web" assembly="CodeCarvings.Piczard" />
+      </controls>
+    </pages>      
+    <httpHandlers>
+      <!-- Add the Piczard HttpHandler -->
+      <!-- Piczard - Important information: Remove or comment the following *add* line if you are using IIS 7/8 Integrated Pipeline Mode with validateIntegratedModeConfiguration = True (HTTP error 500.22/500.23). -->
+      <add verb="*" path="piczardWebResource.ashx" validate="false" type="CodeCarvings.Piczard.Web.WebResourceManager, CodeCarvings.Piczard" />
+    </httpHandlers>
+  </system.web>
+
+  <!-- 
+        The system.webServer section is required for running ASP.NET AJAX under Internet
+        Information Services 7/8.  It is not necessary for previous version of IIS.
+    -->
+  <system.webServer>
+    <handlers>
+      <!-- Add the Piczard HttpHandler -->
+      <add name="PiczardWebResource" verb="*" path="piczardWebResource.ashx" preCondition="integratedMode" type="CodeCarvings.Piczard.Web.WebResourceManager, CodeCarvings.Piczard" />
+    </handlers>
+    <validation validateIntegratedModeConfiguration="false"/>
+  </system.webServer>
+  
+</configuration>

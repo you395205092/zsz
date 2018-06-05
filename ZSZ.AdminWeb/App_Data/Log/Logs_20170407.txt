@@ -1,0 +1,1092 @@
+2017-04-07 22:40:42,518 [6] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 System.Nullable`1.get_Value()
+   在 ZSZ.AdminWeb.Controllers.HouseAppointmentController.List() 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.AdminWeb\Controllers\HouseAppointmentController.cs:行号 18
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-04-07 22:41:05,418 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:05 +08:00
+ 打开了连接
+2017-04-07 22:41:05,656 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2017-04-07 22:41:05,657 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:05,657 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '18918911111' (Type = AnsiString, Size = 8000)
+
+2017-04-07 22:41:05,658 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:41:05 +08:00
+ 执行
+2017-04-07 22:41:05,659 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:41:05,660 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:05,668 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:05 +08:00
+ 关闭了连接
+2017-04-07 22:41:05,687 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:05 +08:00
+ 打开了连接
+2017-04-07 22:41:05,706 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2017-04-07 22:41:05,706 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:05,706 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '18918911111' (Type = AnsiString, Size = 8000)
+
+2017-04-07 22:41:05,706 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:41:05 +08:00
+ 执行
+2017-04-07 22:41:05,708 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:41:05,708 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:05,712 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:05 +08:00
+ 关闭了连接
+2017-04-07 22:41:05,713 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:05 +08:00
+ 打开了连接
+2017-04-07 22:41:05,749 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2017-04-07 22:41:05,749 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:05,750 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '18918911111' (Type = AnsiString, Size = 8000)
+
+2017-04-07 22:41:05,750 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:41:05 +08:00
+ 执行
+2017-04-07 22:41:05,752 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 2 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:41:05,752 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:05,755 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:05 +08:00
+ 关闭了连接
+2017-04-07 22:41:06,230 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:06 +08:00
+ 打开了连接
+2017-04-07 22:41:06,234 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+    )  AS [Limit1]
+2017-04-07 22:41:06,234 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:06,234 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '6' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:41:06,234 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:41:06 +08:00
+ 执行
+2017-04-07 22:41:06,237 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 2 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:41:06,237 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:06,238 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:06 +08:00
+ 关闭了连接
+2017-04-07 22:41:09,283 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:09 +08:00
+ 打开了连接
+2017-04-07 22:41:09,284 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+    )  AS [Limit1]
+2017-04-07 22:41:09,284 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:09,284 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '6' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:41:09,284 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:41:09 +08:00
+ 执行
+2017-04-07 22:41:09,284 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:41:09,284 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:09,285 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:09 +08:00
+ 关闭了连接
+2017-04-07 22:41:09,293 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:09 +08:00
+ 打开了连接
+2017-04-07 22:41:09,502 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (10) 
+    [Project1].[MonthRent] AS [MonthRent], 
+    [Project1].[Id] AS [Id], 
+    [Project1].[UserId] AS [UserId], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[PhoneNum] AS [PhoneNum], 
+    [Project1].[VisitDate] AS [VisitDate], 
+    [Project1].[HouseId] AS [HouseId], 
+    [Project1].[Status] AS [Status], 
+    [Project1].[FollowAdminUserId] AS [FollowAdminUserId], 
+    [Project1].[FollowDateTime] AS [FollowDateTime], 
+    [Project1].[RowVersion] AS [RowVersion], 
+    [Project1].[CreateDateTime] AS [CreateDateTime], 
+    [Project1].[IsDeleted] AS [IsDeleted], 
+    [Project1].[Id3] AS [Id1], 
+    [Project1].[Name2] AS [Name1], 
+    [Project1].[PhoneNum1] AS [PhoneNum1], 
+    [Project1].[PasswordHash] AS [PasswordHash], 
+    [Project1].[PasswordSalt] AS [PasswordSalt], 
+    [Project1].[Email] AS [Email], 
+    [Project1].[CityId] AS [CityId], 
+    [Project1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Project1].[CreateDateTime3] AS [CreateDateTime1], 
+    [Project1].[IsDeleted3] AS [IsDeleted1], 
+    [Project1].[Id1] AS [Id2], 
+    [Project1].[CommunityId] AS [CommunityId], 
+    [Project1].[RoomTypeId] AS [RoomTypeId], 
+    [Project1].[Address] AS [Address], 
+    [Project1].[StatusId] AS [StatusId], 
+    [Project1].[Area] AS [Area], 
+    [Project1].[DecorateStatusId] AS [DecorateStatusId], 
+    [Project1].[TotalFloorCount] AS [TotalFloorCount], 
+    [Project1].[FloorIndex] AS [FloorIndex], 
+    [Project1].[TypeId] AS [TypeId], 
+    [Project1].[Direction] AS [Direction], 
+    [Project1].[LookableDateTime] AS [LookableDateTime], 
+    [Project1].[CheckInDateTime] AS [CheckInDateTime], 
+    [Project1].[OwnerName] AS [OwnerName], 
+    [Project1].[OwnerPhoneNum] AS [OwnerPhoneNum], 
+    [Project1].[Description] AS [Description], 
+    [Project1].[CreateDateTime1] AS [CreateDateTime2], 
+    [Project1].[IsDeleted1] AS [IsDeleted2], 
+    [Project1].[Id2] AS [Id3], 
+    [Project1].[Name1] AS [Name2], 
+    [Project1].[RegionId] AS [RegionId], 
+    [Project1].[Location] AS [Location], 
+    [Project1].[Traffic] AS [Traffic], 
+    [Project1].[BuiltYear] AS [BuiltYear], 
+    [Project1].[CreateDateTime2] AS [CreateDateTime3], 
+    [Project1].[IsDeleted2] AS [IsDeleted3], 
+    [Project1].[Id4] AS [Id4], 
+    [Project1].[Name3] AS [Name3], 
+    [Project1].[CityId1] AS [CityId1], 
+    [Project1].[CreateDateTime4] AS [CreateDateTime4], 
+    [Project1].[IsDeleted4] AS [IsDeleted4]
+    FROM ( SELECT [Project1].[Id] AS [Id], [Project1].[UserId] AS [UserId], [Project1].[Name] AS [Name], [Project1].[PhoneNum] AS [PhoneNum], [Project1].[VisitDate] AS [VisitDate], [Project1].[HouseId] AS [HouseId], [Project1].[Status] AS [Status], [Project1].[FollowAdminUserId] AS [FollowAdminUserId], [Project1].[FollowDateTime] AS [FollowDateTime], [Project1].[RowVersion] AS [RowVersion], [Project1].[CreateDateTime] AS [CreateDateTime], [Project1].[IsDeleted] AS [IsDeleted], [Project1].[Id1] AS [Id1], [Project1].[CommunityId] AS [CommunityId], [Project1].[RoomTypeId] AS [RoomTypeId], [Project1].[Address] AS [Address], [Project1].[MonthRent] AS [MonthRent], [Project1].[StatusId] AS [StatusId], [Project1].[Area] AS [Area], [Project1].[DecorateStatusId] AS [DecorateStatusId], [Project1].[TotalFloorCount] AS [TotalFloorCount], [Project1].[FloorIndex] AS [FloorIndex], [Project1].[TypeId] AS [TypeId], [Project1].[Direction] AS [Direction], [Project1].[LookableDateTime] AS [LookableDateTime], [Project1].[CheckInDateTime] AS [CheckInDateTime], [Project1].[OwnerName] AS [OwnerName], [Project1].[OwnerPhoneNum] AS [OwnerPhoneNum], [Project1].[Description] AS [Description], [Project1].[CreateDateTime1] AS [CreateDateTime1], [Project1].[IsDeleted1] AS [IsDeleted1], [Project1].[Id2] AS [Id2], [Project1].[Name1] AS [Name1], [Project1].[RegionId] AS [RegionId], [Project1].[Location] AS [Location], [Project1].[Traffic] AS [Traffic], [Project1].[BuiltYear] AS [BuiltYear], [Project1].[CreateDateTime2] AS [CreateDateTime2], [Project1].[IsDeleted2] AS [IsDeleted2], [Project1].[Id3] AS [Id3], [Project1].[Name2] AS [Name2], [Project1].[PhoneNum1] AS [PhoneNum1], [Project1].[PasswordHash] AS [PasswordHash], [Project1].[PasswordSalt] AS [PasswordSalt], [Project1].[Email] AS [Email], [Project1].[CityId] AS [CityId], [Project1].[LoginErrorTimes] AS [LoginErrorTimes], [Project1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], [Project1].[CreateDateTime3] AS [CreateDateTime3], [Project1].[IsDeleted3] AS [IsDeleted3], [Project1].[Id4] AS [Id4], [Project1].[Name3] AS [Name3], [Project1].[CityId1] AS [CityId1], [Project1].[CreateDateTime4] AS [CreateDateTime4], [Project1].[IsDeleted4] AS [IsDeleted4], row_number() OVER (ORDER BY [Project1].[CreateDateTime] DESC) AS [row_number]
+        FROM ( SELECT 
+            [Filter1].[Id5] AS [Id], 
+            [Filter1].[UserId] AS [UserId], 
+            [Filter1].[Name4] AS [Name], 
+            [Filter1].[PhoneNum2] AS [PhoneNum], 
+            [Filter1].[VisitDate] AS [VisitDate], 
+            [Filter1].[HouseId] AS [HouseId], 
+            [Filter1].[Status] AS [Status], 
+            [Filter1].[FollowAdminUserId] AS [FollowAdminUserId], 
+            [Filter1].[FollowDateTime] AS [FollowDateTime], 
+            [Filter1].[RowVersion] AS [RowVersion], 
+            [Filter1].[CreateDateTime5] AS [CreateDateTime], 
+            [Filter1].[IsDeleted5] AS [IsDeleted], 
+            [Filter1].[Id6] AS [Id1], 
+            [Filter1].[CommunityId] AS [CommunityId], 
+            [Filter1].[RoomTypeId] AS [RoomTypeId], 
+            [Filter1].[Address] AS [Address], 
+            [Filter1].[MonthRent] AS [MonthRent], 
+            [Filter1].[StatusId] AS [StatusId], 
+            [Filter1].[Area] AS [Area], 
+            [Filter1].[DecorateStatusId] AS [DecorateStatusId], 
+            [Filter1].[TotalFloorCount] AS [TotalFloorCount], 
+            [Filter1].[FloorIndex] AS [FloorIndex], 
+            [Filter1].[TypeId] AS [TypeId], 
+            [Filter1].[Direction] AS [Direction], 
+            [Filter1].[LookableDateTime] AS [LookableDateTime], 
+            [Filter1].[CheckInDateTime] AS [CheckInDateTime], 
+            [Filter1].[OwnerName] AS [OwnerName], 
+            [Filter1].[OwnerPhoneNum] AS [OwnerPhoneNum], 
+            [Filter1].[Description] AS [Description], 
+            [Filter1].[CreateDateTime6] AS [CreateDateTime1], 
+            [Filter1].[IsDeleted6] AS [IsDeleted1], 
+            [Filter1].[Id7] AS [Id2], 
+            [Filter1].[Name5] AS [Name1], 
+            [Filter1].[RegionId] AS [RegionId], 
+            [Filter1].[Location] AS [Location], 
+            [Filter1].[Traffic] AS [Traffic], 
+            [Filter1].[BuiltYear] AS [BuiltYear], 
+            [Filter1].[CreateDateTime7] AS [CreateDateTime2], 
+            [Filter1].[IsDeleted7] AS [IsDeleted2], 
+            [Filter1].[Id8] AS [Id3], 
+            [Filter1].[Name6] AS [Name2], 
+            [Filter1].[PhoneNum3] AS [PhoneNum1], 
+            [Filter1].[PasswordHash] AS [PasswordHash], 
+            [Filter1].[PasswordSalt] AS [PasswordSalt], 
+            [Filter1].[Email] AS [Email], 
+            [Filter1].[CityId2] AS [CityId], 
+            [Filter1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Filter1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+            [Filter1].[CreateDateTime8] AS [CreateDateTime3], 
+            [Filter1].[IsDeleted8] AS [IsDeleted3], 
+            [Extent6].[Id] AS [Id4], 
+            [Extent6].[Name] AS [Name3], 
+            [Extent6].[CityId] AS [CityId1], 
+            [Extent6].[CreateDateTime] AS [CreateDateTime4], 
+            [Extent6].[IsDeleted] AS [IsDeleted4]
+            FROM   (SELECT [Extent1].[Id] AS [Id5], [Extent1].[UserId] AS [UserId], [Extent1].[Name] AS [Name4], [Extent1].[PhoneNum] AS [PhoneNum2], [Extent1].[VisitDate] AS [VisitDate], [Extent1].[HouseId] AS [HouseId], [Extent1].[Status] AS [Status], [Extent1].[FollowAdminUserId] AS [FollowAdminUserId], [Extent1].[FollowDateTime] AS [FollowDateTime], [Extent1].[RowVersion] AS [RowVersion], [Extent1].[CreateDateTime] AS [CreateDateTime5], [Extent1].[IsDeleted] AS [IsDeleted5], [Extent2].[Id] AS [Id6], [Extent2].[CommunityId] AS [CommunityId], [Extent2].[RoomTypeId] AS [RoomTypeId], [Extent2].[Address] AS [Address], [Extent2].[MonthRent] AS [MonthRent], [Extent2].[StatusId] AS [StatusId], [Extent2].[Area] AS [Area], [Extent2].[DecorateStatusId] AS [DecorateStatusId], [Extent2].[TotalFloorCount] AS [TotalFloorCount], [Extent2].[FloorIndex] AS [FloorIndex], [Extent2].[TypeId] AS [TypeId], [Extent2].[Direction] AS [Direction], [Extent2].[LookableDateTime] AS [LookableDateTime], [Extent2].[CheckInDateTime] AS [CheckInDateTime], [Extent2].[OwnerName] AS [OwnerName], [Extent2].[OwnerPhoneNum] AS [OwnerPhoneNum], [Extent2].[Description] AS [Description], [Extent2].[CreateDateTime] AS [CreateDateTime6], [Extent2].[IsDeleted] AS [IsDeleted6], [Extent3].[Id] AS [Id7], [Extent3].[Name] AS [Name5], [Extent3].[RegionId] AS [RegionId], [Extent3].[Location] AS [Location], [Extent3].[Traffic] AS [Traffic], [Extent3].[BuiltYear] AS [BuiltYear], [Extent3].[CreateDateTime] AS [CreateDateTime7], [Extent3].[IsDeleted] AS [IsDeleted7], [Extent4].[CityId] AS [CityId3], [Extent5].[Id] AS [Id8], [Extent5].[Name] AS [Name6], [Extent5].[PhoneNum] AS [PhoneNum3], [Extent5].[PasswordHash] AS [PasswordHash], [Extent5].[PasswordSalt] AS [PasswordSalt], [Extent5].[Email] AS [Email], [Extent5].[CityId] AS [CityId2], [Extent5].[LoginErrorTimes] AS [LoginErrorTimes], [Extent5].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], [Extent5].[CreateDateTime] AS [CreateDateTime8], [Extent5].[IsDeleted] AS [IsDeleted8]
+                FROM     [dbo].[T_HouseAppointments] AS [Extent1]
+                INNER JOIN [dbo].[T_Houses] AS [Extent2] ON [Extent1].[HouseId] = [Extent2].[Id]
+                INNER JOIN [dbo].[T_Communities] AS [Extent3] ON [Extent2].[CommunityId] = [Extent3].[Id]
+                INNER JOIN [dbo].[T_Regions] AS [Extent4] ON [Extent3].[RegionId] = [Extent4].[Id]
+                LEFT OUTER JOIN [dbo].[T_AdminUsers] AS [Extent5] ON [Extent1].[FollowAdminUserId] = [Extent5].[Id]
+                WHERE 0 = [Extent1].[IsDeleted] ) AS [Filter1]
+            LEFT OUTER JOIN [dbo].[T_Regions] AS [Extent6] ON [Filter1].[RegionId] = [Extent6].[Id]
+            WHERE ([Filter1].[CityId3] = @p__linq__0) AND ([Filter1].[Status] = @p__linq__1)
+        )  AS [Project1]
+    )  AS [Project1]
+    WHERE [Project1].[row_number] > 1
+    ORDER BY [Project1].[CreateDateTime] DESC
+2017-04-07 22:41:09,503 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:09,503 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:41:09,503 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__1: '未处理' (Type = String, Size = 4000)
+
+2017-04-07 22:41:09,503 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:41:09 +08:00
+ 执行
+2017-04-07 22:41:09,531 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 28 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:41:09,531 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:41:09,543 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:41:09 +08:00
+ 关闭了连接
+2017-04-07 22:43:02,608 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:43:02 +08:00
+ 打开了连接
+2017-04-07 22:43:02,810 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+    )  AS [Limit1]
+2017-04-07 22:43:02,810 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:43:02,811 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '6' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:43:02,811 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:43:02 +08:00
+ 执行
+2017-04-07 22:43:02,811 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:43:02,811 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:43:02,816 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:43:02 +08:00
+ 关闭了连接
+2017-04-07 22:43:02,827 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:43:02 +08:00
+ 打开了连接
+2017-04-07 22:43:02,986 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (10) 
+    [Project1].[MonthRent] AS [MonthRent], 
+    [Project1].[Id] AS [Id], 
+    [Project1].[UserId] AS [UserId], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[PhoneNum] AS [PhoneNum], 
+    [Project1].[VisitDate] AS [VisitDate], 
+    [Project1].[HouseId] AS [HouseId], 
+    [Project1].[Status] AS [Status], 
+    [Project1].[FollowAdminUserId] AS [FollowAdminUserId], 
+    [Project1].[FollowDateTime] AS [FollowDateTime], 
+    [Project1].[RowVersion] AS [RowVersion], 
+    [Project1].[CreateDateTime] AS [CreateDateTime], 
+    [Project1].[IsDeleted] AS [IsDeleted], 
+    [Project1].[Id3] AS [Id1], 
+    [Project1].[Name2] AS [Name1], 
+    [Project1].[PhoneNum1] AS [PhoneNum1], 
+    [Project1].[PasswordHash] AS [PasswordHash], 
+    [Project1].[PasswordSalt] AS [PasswordSalt], 
+    [Project1].[Email] AS [Email], 
+    [Project1].[CityId] AS [CityId], 
+    [Project1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Project1].[CreateDateTime3] AS [CreateDateTime1], 
+    [Project1].[IsDeleted3] AS [IsDeleted1], 
+    [Project1].[Id1] AS [Id2], 
+    [Project1].[CommunityId] AS [CommunityId], 
+    [Project1].[RoomTypeId] AS [RoomTypeId], 
+    [Project1].[Address] AS [Address], 
+    [Project1].[StatusId] AS [StatusId], 
+    [Project1].[Area] AS [Area], 
+    [Project1].[DecorateStatusId] AS [DecorateStatusId], 
+    [Project1].[TotalFloorCount] AS [TotalFloorCount], 
+    [Project1].[FloorIndex] AS [FloorIndex], 
+    [Project1].[TypeId] AS [TypeId], 
+    [Project1].[Direction] AS [Direction], 
+    [Project1].[LookableDateTime] AS [LookableDateTime], 
+    [Project1].[CheckInDateTime] AS [CheckInDateTime], 
+    [Project1].[OwnerName] AS [OwnerName], 
+    [Project1].[OwnerPhoneNum] AS [OwnerPhoneNum], 
+    [Project1].[Description] AS [Description], 
+    [Project1].[CreateDateTime1] AS [CreateDateTime2], 
+    [Project1].[IsDeleted1] AS [IsDeleted2], 
+    [Project1].[Id2] AS [Id3], 
+    [Project1].[Name1] AS [Name2], 
+    [Project1].[RegionId] AS [RegionId], 
+    [Project1].[Location] AS [Location], 
+    [Project1].[Traffic] AS [Traffic], 
+    [Project1].[BuiltYear] AS [BuiltYear], 
+    [Project1].[CreateDateTime2] AS [CreateDateTime3], 
+    [Project1].[IsDeleted2] AS [IsDeleted3], 
+    [Project1].[Id4] AS [Id4], 
+    [Project1].[Name3] AS [Name3], 
+    [Project1].[CityId1] AS [CityId1], 
+    [Project1].[CreateDateTime4] AS [CreateDateTime4], 
+    [Project1].[IsDeleted4] AS [IsDeleted4]
+    FROM ( SELECT [Project1].[Id] AS [Id], [Project1].[UserId] AS [UserId], [Project1].[Name] AS [Name], [Project1].[PhoneNum] AS [PhoneNum], [Project1].[VisitDate] AS [VisitDate], [Project1].[HouseId] AS [HouseId], [Project1].[Status] AS [Status], [Project1].[FollowAdminUserId] AS [FollowAdminUserId], [Project1].[FollowDateTime] AS [FollowDateTime], [Project1].[RowVersion] AS [RowVersion], [Project1].[CreateDateTime] AS [CreateDateTime], [Project1].[IsDeleted] AS [IsDeleted], [Project1].[Id1] AS [Id1], [Project1].[CommunityId] AS [CommunityId], [Project1].[RoomTypeId] AS [RoomTypeId], [Project1].[Address] AS [Address], [Project1].[MonthRent] AS [MonthRent], [Project1].[StatusId] AS [StatusId], [Project1].[Area] AS [Area], [Project1].[DecorateStatusId] AS [DecorateStatusId], [Project1].[TotalFloorCount] AS [TotalFloorCount], [Project1].[FloorIndex] AS [FloorIndex], [Project1].[TypeId] AS [TypeId], [Project1].[Direction] AS [Direction], [Project1].[LookableDateTime] AS [LookableDateTime], [Project1].[CheckInDateTime] AS [CheckInDateTime], [Project1].[OwnerName] AS [OwnerName], [Project1].[OwnerPhoneNum] AS [OwnerPhoneNum], [Project1].[Description] AS [Description], [Project1].[CreateDateTime1] AS [CreateDateTime1], [Project1].[IsDeleted1] AS [IsDeleted1], [Project1].[Id2] AS [Id2], [Project1].[Name1] AS [Name1], [Project1].[RegionId] AS [RegionId], [Project1].[Location] AS [Location], [Project1].[Traffic] AS [Traffic], [Project1].[BuiltYear] AS [BuiltYear], [Project1].[CreateDateTime2] AS [CreateDateTime2], [Project1].[IsDeleted2] AS [IsDeleted2], [Project1].[Id3] AS [Id3], [Project1].[Name2] AS [Name2], [Project1].[PhoneNum1] AS [PhoneNum1], [Project1].[PasswordHash] AS [PasswordHash], [Project1].[PasswordSalt] AS [PasswordSalt], [Project1].[Email] AS [Email], [Project1].[CityId] AS [CityId], [Project1].[LoginErrorTimes] AS [LoginErrorTimes], [Project1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], [Project1].[CreateDateTime3] AS [CreateDateTime3], [Project1].[IsDeleted3] AS [IsDeleted3], [Project1].[Id4] AS [Id4], [Project1].[Name3] AS [Name3], [Project1].[CityId1] AS [CityId1], [Project1].[CreateDateTime4] AS [CreateDateTime4], [Project1].[IsDeleted4] AS [IsDeleted4], row_number() OVER (ORDER BY [Project1].[CreateDateTime] DESC) AS [row_number]
+        FROM ( SELECT 
+            [Filter1].[Id5] AS [Id], 
+            [Filter1].[UserId] AS [UserId], 
+            [Filter1].[Name4] AS [Name], 
+            [Filter1].[PhoneNum2] AS [PhoneNum], 
+            [Filter1].[VisitDate] AS [VisitDate], 
+            [Filter1].[HouseId] AS [HouseId], 
+            [Filter1].[Status] AS [Status], 
+            [Filter1].[FollowAdminUserId] AS [FollowAdminUserId], 
+            [Filter1].[FollowDateTime] AS [FollowDateTime], 
+            [Filter1].[RowVersion] AS [RowVersion], 
+            [Filter1].[CreateDateTime5] AS [CreateDateTime], 
+            [Filter1].[IsDeleted5] AS [IsDeleted], 
+            [Filter1].[Id6] AS [Id1], 
+            [Filter1].[CommunityId] AS [CommunityId], 
+            [Filter1].[RoomTypeId] AS [RoomTypeId], 
+            [Filter1].[Address] AS [Address], 
+            [Filter1].[MonthRent] AS [MonthRent], 
+            [Filter1].[StatusId] AS [StatusId], 
+            [Filter1].[Area] AS [Area], 
+            [Filter1].[DecorateStatusId] AS [DecorateStatusId], 
+            [Filter1].[TotalFloorCount] AS [TotalFloorCount], 
+            [Filter1].[FloorIndex] AS [FloorIndex], 
+            [Filter1].[TypeId] AS [TypeId], 
+            [Filter1].[Direction] AS [Direction], 
+            [Filter1].[LookableDateTime] AS [LookableDateTime], 
+            [Filter1].[CheckInDateTime] AS [CheckInDateTime], 
+            [Filter1].[OwnerName] AS [OwnerName], 
+            [Filter1].[OwnerPhoneNum] AS [OwnerPhoneNum], 
+            [Filter1].[Description] AS [Description], 
+            [Filter1].[CreateDateTime6] AS [CreateDateTime1], 
+            [Filter1].[IsDeleted6] AS [IsDeleted1], 
+            [Filter1].[Id7] AS [Id2], 
+            [Filter1].[Name5] AS [Name1], 
+            [Filter1].[RegionId] AS [RegionId], 
+            [Filter1].[Location] AS [Location], 
+            [Filter1].[Traffic] AS [Traffic], 
+            [Filter1].[BuiltYear] AS [BuiltYear], 
+            [Filter1].[CreateDateTime7] AS [CreateDateTime2], 
+            [Filter1].[IsDeleted7] AS [IsDeleted2], 
+            [Filter1].[Id8] AS [Id3], 
+            [Filter1].[Name6] AS [Name2], 
+            [Filter1].[PhoneNum3] AS [PhoneNum1], 
+            [Filter1].[PasswordHash] AS [PasswordHash], 
+            [Filter1].[PasswordSalt] AS [PasswordSalt], 
+            [Filter1].[Email] AS [Email], 
+            [Filter1].[CityId2] AS [CityId], 
+            [Filter1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Filter1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+            [Filter1].[CreateDateTime8] AS [CreateDateTime3], 
+            [Filter1].[IsDeleted8] AS [IsDeleted3], 
+            [Extent6].[Id] AS [Id4], 
+            [Extent6].[Name] AS [Name3], 
+            [Extent6].[CityId] AS [CityId1], 
+            [Extent6].[CreateDateTime] AS [CreateDateTime4], 
+            [Extent6].[IsDeleted] AS [IsDeleted4]
+            FROM   (SELECT [Extent1].[Id] AS [Id5], [Extent1].[UserId] AS [UserId], [Extent1].[Name] AS [Name4], [Extent1].[PhoneNum] AS [PhoneNum2], [Extent1].[VisitDate] AS [VisitDate], [Extent1].[HouseId] AS [HouseId], [Extent1].[Status] AS [Status], [Extent1].[FollowAdminUserId] AS [FollowAdminUserId], [Extent1].[FollowDateTime] AS [FollowDateTime], [Extent1].[RowVersion] AS [RowVersion], [Extent1].[CreateDateTime] AS [CreateDateTime5], [Extent1].[IsDeleted] AS [IsDeleted5], [Extent2].[Id] AS [Id6], [Extent2].[CommunityId] AS [CommunityId], [Extent2].[RoomTypeId] AS [RoomTypeId], [Extent2].[Address] AS [Address], [Extent2].[MonthRent] AS [MonthRent], [Extent2].[StatusId] AS [StatusId], [Extent2].[Area] AS [Area], [Extent2].[DecorateStatusId] AS [DecorateStatusId], [Extent2].[TotalFloorCount] AS [TotalFloorCount], [Extent2].[FloorIndex] AS [FloorIndex], [Extent2].[TypeId] AS [TypeId], [Extent2].[Direction] AS [Direction], [Extent2].[LookableDateTime] AS [LookableDateTime], [Extent2].[CheckInDateTime] AS [CheckInDateTime], [Extent2].[OwnerName] AS [OwnerName], [Extent2].[OwnerPhoneNum] AS [OwnerPhoneNum], [Extent2].[Description] AS [Description], [Extent2].[CreateDateTime] AS [CreateDateTime6], [Extent2].[IsDeleted] AS [IsDeleted6], [Extent3].[Id] AS [Id7], [Extent3].[Name] AS [Name5], [Extent3].[RegionId] AS [RegionId], [Extent3].[Location] AS [Location], [Extent3].[Traffic] AS [Traffic], [Extent3].[BuiltYear] AS [BuiltYear], [Extent3].[CreateDateTime] AS [CreateDateTime7], [Extent3].[IsDeleted] AS [IsDeleted7], [Extent4].[CityId] AS [CityId3], [Extent5].[Id] AS [Id8], [Extent5].[Name] AS [Name6], [Extent5].[PhoneNum] AS [PhoneNum3], [Extent5].[PasswordHash] AS [PasswordHash], [Extent5].[PasswordSalt] AS [PasswordSalt], [Extent5].[Email] AS [Email], [Extent5].[CityId] AS [CityId2], [Extent5].[LoginErrorTimes] AS [LoginErrorTimes], [Extent5].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], [Extent5].[CreateDateTime] AS [CreateDateTime8], [Extent5].[IsDeleted] AS [IsDeleted8]
+                FROM     [dbo].[T_HouseAppointments] AS [Extent1]
+                INNER JOIN [dbo].[T_Houses] AS [Extent2] ON [Extent1].[HouseId] = [Extent2].[Id]
+                INNER JOIN [dbo].[T_Communities] AS [Extent3] ON [Extent2].[CommunityId] = [Extent3].[Id]
+                INNER JOIN [dbo].[T_Regions] AS [Extent4] ON [Extent3].[RegionId] = [Extent4].[Id]
+                LEFT OUTER JOIN [dbo].[T_AdminUsers] AS [Extent5] ON [Extent1].[FollowAdminUserId] = [Extent5].[Id]
+                WHERE 0 = [Extent1].[IsDeleted] ) AS [Filter1]
+            LEFT OUTER JOIN [dbo].[T_Regions] AS [Extent6] ON [Filter1].[RegionId] = [Extent6].[Id]
+            WHERE ([Filter1].[CityId3] = @p__linq__0) AND ([Filter1].[Status] = @p__linq__1)
+        )  AS [Project1]
+    )  AS [Project1]
+    WHERE [Project1].[row_number] > 1
+    ORDER BY [Project1].[CreateDateTime] DESC
+2017-04-07 22:43:02,986 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:43:02,986 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:43:02,986 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__1: '未处理' (Type = String, Size = 4000)
+
+2017-04-07 22:43:02,986 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:43:02 +08:00
+ 执行
+2017-04-07 22:43:02,987 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:43:02,987 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:43:02,996 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:43:02 +08:00
+ 关闭了连接
+2017-04-07 22:43:11,571 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:43:11 +08:00
+ 打开了连接
+2017-04-07 22:43:11,572 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+    )  AS [Limit1]
+2017-04-07 22:43:11,572 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:43:11,573 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '6' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:43:11,573 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:43:11 +08:00
+ 执行
+2017-04-07 22:43:11,573 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:43:11,573 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:43:11,573 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:43:11 +08:00
+ 关闭了连接
+2017-04-07 22:43:11,575 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:43:11 +08:00
+ 打开了连接
+2017-04-07 22:43:11,576 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (10) 
+    [Project1].[MonthRent] AS [MonthRent], 
+    [Project1].[Id] AS [Id], 
+    [Project1].[UserId] AS [UserId], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[PhoneNum] AS [PhoneNum], 
+    [Project1].[VisitDate] AS [VisitDate], 
+    [Project1].[HouseId] AS [HouseId], 
+    [Project1].[Status] AS [Status], 
+    [Project1].[FollowAdminUserId] AS [FollowAdminUserId], 
+    [Project1].[FollowDateTime] AS [FollowDateTime], 
+    [Project1].[RowVersion] AS [RowVersion], 
+    [Project1].[CreateDateTime] AS [CreateDateTime], 
+    [Project1].[IsDeleted] AS [IsDeleted], 
+    [Project1].[Id3] AS [Id1], 
+    [Project1].[Name2] AS [Name1], 
+    [Project1].[PhoneNum1] AS [PhoneNum1], 
+    [Project1].[PasswordHash] AS [PasswordHash], 
+    [Project1].[PasswordSalt] AS [PasswordSalt], 
+    [Project1].[Email] AS [Email], 
+    [Project1].[CityId] AS [CityId], 
+    [Project1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Project1].[CreateDateTime3] AS [CreateDateTime1], 
+    [Project1].[IsDeleted3] AS [IsDeleted1], 
+    [Project1].[Id1] AS [Id2], 
+    [Project1].[CommunityId] AS [CommunityId], 
+    [Project1].[RoomTypeId] AS [RoomTypeId], 
+    [Project1].[Address] AS [Address], 
+    [Project1].[StatusId] AS [StatusId], 
+    [Project1].[Area] AS [Area], 
+    [Project1].[DecorateStatusId] AS [DecorateStatusId], 
+    [Project1].[TotalFloorCount] AS [TotalFloorCount], 
+    [Project1].[FloorIndex] AS [FloorIndex], 
+    [Project1].[TypeId] AS [TypeId], 
+    [Project1].[Direction] AS [Direction], 
+    [Project1].[LookableDateTime] AS [LookableDateTime], 
+    [Project1].[CheckInDateTime] AS [CheckInDateTime], 
+    [Project1].[OwnerName] AS [OwnerName], 
+    [Project1].[OwnerPhoneNum] AS [OwnerPhoneNum], 
+    [Project1].[Description] AS [Description], 
+    [Project1].[CreateDateTime1] AS [CreateDateTime2], 
+    [Project1].[IsDeleted1] AS [IsDeleted2], 
+    [Project1].[Id2] AS [Id3], 
+    [Project1].[Name1] AS [Name2], 
+    [Project1].[RegionId] AS [RegionId], 
+    [Project1].[Location] AS [Location], 
+    [Project1].[Traffic] AS [Traffic], 
+    [Project1].[BuiltYear] AS [BuiltYear], 
+    [Project1].[CreateDateTime2] AS [CreateDateTime3], 
+    [Project1].[IsDeleted2] AS [IsDeleted3], 
+    [Project1].[Id4] AS [Id4], 
+    [Project1].[Name3] AS [Name3], 
+    [Project1].[CityId1] AS [CityId1], 
+    [Project1].[CreateDateTime4] AS [CreateDateTime4], 
+    [Project1].[IsDeleted4] AS [IsDeleted4]
+    FROM ( SELECT [Project1].[Id] AS [Id], [Project1].[UserId] AS [UserId], [Project1].[Name] AS [Name], [Project1].[PhoneNum] AS [PhoneNum], [Project1].[VisitDate] AS [VisitDate], [Project1].[HouseId] AS [HouseId], [Project1].[Status] AS [Status], [Project1].[FollowAdminUserId] AS [FollowAdminUserId], [Project1].[FollowDateTime] AS [FollowDateTime], [Project1].[RowVersion] AS [RowVersion], [Project1].[CreateDateTime] AS [CreateDateTime], [Project1].[IsDeleted] AS [IsDeleted], [Project1].[Id1] AS [Id1], [Project1].[CommunityId] AS [CommunityId], [Project1].[RoomTypeId] AS [RoomTypeId], [Project1].[Address] AS [Address], [Project1].[MonthRent] AS [MonthRent], [Project1].[StatusId] AS [StatusId], [Project1].[Area] AS [Area], [Project1].[DecorateStatusId] AS [DecorateStatusId], [Project1].[TotalFloorCount] AS [TotalFloorCount], [Project1].[FloorIndex] AS [FloorIndex], [Project1].[TypeId] AS [TypeId], [Project1].[Direction] AS [Direction], [Project1].[LookableDateTime] AS [LookableDateTime], [Project1].[CheckInDateTime] AS [CheckInDateTime], [Project1].[OwnerName] AS [OwnerName], [Project1].[OwnerPhoneNum] AS [OwnerPhoneNum], [Project1].[Description] AS [Description], [Project1].[CreateDateTime1] AS [CreateDateTime1], [Project1].[IsDeleted1] AS [IsDeleted1], [Project1].[Id2] AS [Id2], [Project1].[Name1] AS [Name1], [Project1].[RegionId] AS [RegionId], [Project1].[Location] AS [Location], [Project1].[Traffic] AS [Traffic], [Project1].[BuiltYear] AS [BuiltYear], [Project1].[CreateDateTime2] AS [CreateDateTime2], [Project1].[IsDeleted2] AS [IsDeleted2], [Project1].[Id3] AS [Id3], [Project1].[Name2] AS [Name2], [Project1].[PhoneNum1] AS [PhoneNum1], [Project1].[PasswordHash] AS [PasswordHash], [Project1].[PasswordSalt] AS [PasswordSalt], [Project1].[Email] AS [Email], [Project1].[CityId] AS [CityId], [Project1].[LoginErrorTimes] AS [LoginErrorTimes], [Project1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], [Project1].[CreateDateTime3] AS [CreateDateTime3], [Project1].[IsDeleted3] AS [IsDeleted3], [Project1].[Id4] AS [Id4], [Project1].[Name3] AS [Name3], [Project1].[CityId1] AS [CityId1], [Project1].[CreateDateTime4] AS [CreateDateTime4], [Project1].[IsDeleted4] AS [IsDeleted4], row_number() OVER (ORDER BY [Project1].[CreateDateTime] DESC) AS [row_number]
+        FROM ( SELECT 
+            [Filter1].[Id5] AS [Id], 
+            [Filter1].[UserId] AS [UserId], 
+            [Filter1].[Name4] AS [Name], 
+            [Filter1].[PhoneNum2] AS [PhoneNum], 
+            [Filter1].[VisitDate] AS [VisitDate], 
+            [Filter1].[HouseId] AS [HouseId], 
+            [Filter1].[Status] AS [Status], 
+            [Filter1].[FollowAdminUserId] AS [FollowAdminUserId], 
+            [Filter1].[FollowDateTime] AS [FollowDateTime], 
+            [Filter1].[RowVersion] AS [RowVersion], 
+            [Filter1].[CreateDateTime5] AS [CreateDateTime], 
+            [Filter1].[IsDeleted5] AS [IsDeleted], 
+            [Filter1].[Id6] AS [Id1], 
+            [Filter1].[CommunityId] AS [CommunityId], 
+            [Filter1].[RoomTypeId] AS [RoomTypeId], 
+            [Filter1].[Address] AS [Address], 
+            [Filter1].[MonthRent] AS [MonthRent], 
+            [Filter1].[StatusId] AS [StatusId], 
+            [Filter1].[Area] AS [Area], 
+            [Filter1].[DecorateStatusId] AS [DecorateStatusId], 
+            [Filter1].[TotalFloorCount] AS [TotalFloorCount], 
+            [Filter1].[FloorIndex] AS [FloorIndex], 
+            [Filter1].[TypeId] AS [TypeId], 
+            [Filter1].[Direction] AS [Direction], 
+            [Filter1].[LookableDateTime] AS [LookableDateTime], 
+            [Filter1].[CheckInDateTime] AS [CheckInDateTime], 
+            [Filter1].[OwnerName] AS [OwnerName], 
+            [Filter1].[OwnerPhoneNum] AS [OwnerPhoneNum], 
+            [Filter1].[Description] AS [Description], 
+            [Filter1].[CreateDateTime6] AS [CreateDateTime1], 
+            [Filter1].[IsDeleted6] AS [IsDeleted1], 
+            [Filter1].[Id7] AS [Id2], 
+            [Filter1].[Name5] AS [Name1], 
+            [Filter1].[RegionId] AS [RegionId], 
+            [Filter1].[Location] AS [Location], 
+            [Filter1].[Traffic] AS [Traffic], 
+            [Filter1].[BuiltYear] AS [BuiltYear], 
+            [Filter1].[CreateDateTime7] AS [CreateDateTime2], 
+            [Filter1].[IsDeleted7] AS [IsDeleted2], 
+            [Filter1].[Id8] AS [Id3], 
+            [Filter1].[Name6] AS [Name2], 
+            [Filter1].[PhoneNum3] AS [PhoneNum1], 
+            [Filter1].[PasswordHash] AS [PasswordHash], 
+            [Filter1].[PasswordSalt] AS [PasswordSalt], 
+            [Filter1].[Email] AS [Email], 
+            [Filter1].[CityId2] AS [CityId], 
+            [Filter1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Filter1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+            [Filter1].[CreateDateTime8] AS [CreateDateTime3], 
+            [Filter1].[IsDeleted8] AS [IsDeleted3], 
+            [Extent6].[Id] AS [Id4], 
+            [Extent6].[Name] AS [Name3], 
+            [Extent6].[CityId] AS [CityId1], 
+            [Extent6].[CreateDateTime] AS [CreateDateTime4], 
+            [Extent6].[IsDeleted] AS [IsDeleted4]
+            FROM   (SELECT [Extent1].[Id] AS [Id5], [Extent1].[UserId] AS [UserId], [Extent1].[Name] AS [Name4], [Extent1].[PhoneNum] AS [PhoneNum2], [Extent1].[VisitDate] AS [VisitDate], [Extent1].[HouseId] AS [HouseId], [Extent1].[Status] AS [Status], [Extent1].[FollowAdminUserId] AS [FollowAdminUserId], [Extent1].[FollowDateTime] AS [FollowDateTime], [Extent1].[RowVersion] AS [RowVersion], [Extent1].[CreateDateTime] AS [CreateDateTime5], [Extent1].[IsDeleted] AS [IsDeleted5], [Extent2].[Id] AS [Id6], [Extent2].[CommunityId] AS [CommunityId], [Extent2].[RoomTypeId] AS [RoomTypeId], [Extent2].[Address] AS [Address], [Extent2].[MonthRent] AS [MonthRent], [Extent2].[StatusId] AS [StatusId], [Extent2].[Area] AS [Area], [Extent2].[DecorateStatusId] AS [DecorateStatusId], [Extent2].[TotalFloorCount] AS [TotalFloorCount], [Extent2].[FloorIndex] AS [FloorIndex], [Extent2].[TypeId] AS [TypeId], [Extent2].[Direction] AS [Direction], [Extent2].[LookableDateTime] AS [LookableDateTime], [Extent2].[CheckInDateTime] AS [CheckInDateTime], [Extent2].[OwnerName] AS [OwnerName], [Extent2].[OwnerPhoneNum] AS [OwnerPhoneNum], [Extent2].[Description] AS [Description], [Extent2].[CreateDateTime] AS [CreateDateTime6], [Extent2].[IsDeleted] AS [IsDeleted6], [Extent3].[Id] AS [Id7], [Extent3].[Name] AS [Name5], [Extent3].[RegionId] AS [RegionId], [Extent3].[Location] AS [Location], [Extent3].[Traffic] AS [Traffic], [Extent3].[BuiltYear] AS [BuiltYear], [Extent3].[CreateDateTime] AS [CreateDateTime7], [Extent3].[IsDeleted] AS [IsDeleted7], [Extent4].[CityId] AS [CityId3], [Extent5].[Id] AS [Id8], [Extent5].[Name] AS [Name6], [Extent5].[PhoneNum] AS [PhoneNum3], [Extent5].[PasswordHash] AS [PasswordHash], [Extent5].[PasswordSalt] AS [PasswordSalt], [Extent5].[Email] AS [Email], [Extent5].[CityId] AS [CityId2], [Extent5].[LoginErrorTimes] AS [LoginErrorTimes], [Extent5].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], [Extent5].[CreateDateTime] AS [CreateDateTime8], [Extent5].[IsDeleted] AS [IsDeleted8]
+                FROM     [dbo].[T_HouseAppointments] AS [Extent1]
+                INNER JOIN [dbo].[T_Houses] AS [Extent2] ON [Extent1].[HouseId] = [Extent2].[Id]
+                INNER JOIN [dbo].[T_Communities] AS [Extent3] ON [Extent2].[CommunityId] = [Extent3].[Id]
+                INNER JOIN [dbo].[T_Regions] AS [Extent4] ON [Extent3].[RegionId] = [Extent4].[Id]
+                LEFT OUTER JOIN [dbo].[T_AdminUsers] AS [Extent5] ON [Extent1].[FollowAdminUserId] = [Extent5].[Id]
+                WHERE 0 = [Extent1].[IsDeleted] ) AS [Filter1]
+            LEFT OUTER JOIN [dbo].[T_Regions] AS [Extent6] ON [Filter1].[RegionId] = [Extent6].[Id]
+            WHERE ([Filter1].[CityId3] = @p__linq__0) AND ([Filter1].[Status] = @p__linq__1)
+        )  AS [Project1]
+    )  AS [Project1]
+    WHERE [Project1].[row_number] > 1
+    ORDER BY [Project1].[CreateDateTime] DESC
+2017-04-07 22:43:11,576 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:43:11,576 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:43:11,576 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__1: '未处理' (Type = String, Size = 4000)
+
+2017-04-07 22:43:11,576 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:43:11 +08:00
+ 执行
+2017-04-07 22:43:11,582 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 5 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:43:11,582 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:43:11,582 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:43:11 +08:00
+ 关闭了连接
+2017-04-07 22:43:19,684 [7] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.ArgumentException: 对于“ZSZ.AdminWeb.Controllers.HouseAppointmentController”中方法“System.Web.Mvc.ActionResult Follow(Int64)”的不可以为 null 的类型“System.Int64”的参数“appId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-04-07 22:43:30,586 [7] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.ArgumentException: 对于“ZSZ.AdminWeb.Controllers.HouseAppointmentController”中方法“System.Web.Mvc.ActionResult Follow(Int64)”的不可以为 null 的类型“System.Int64”的参数“appId”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-04-07 22:44:08,529 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:08 +08:00
+ 打开了连接
+2017-04-07 22:44:08,530 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+    )  AS [Limit1]
+2017-04-07 22:44:08,530 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:08,530 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '6' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:44:08,530 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:44:08 +08:00
+ 执行
+2017-04-07 22:44:08,532 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:44:08,532 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:08,532 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:08 +08:00
+ 关闭了连接
+2017-04-07 22:44:08,536 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:08 +08:00
+ 打开了连接
+2017-04-07 22:44:08,536 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (10) 
+    [Project1].[MonthRent] AS [MonthRent], 
+    [Project1].[Id] AS [Id], 
+    [Project1].[UserId] AS [UserId], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[PhoneNum] AS [PhoneNum], 
+    [Project1].[VisitDate] AS [VisitDate], 
+    [Project1].[HouseId] AS [HouseId], 
+    [Project1].[Status] AS [Status], 
+    [Project1].[FollowAdminUserId] AS [FollowAdminUserId], 
+    [Project1].[FollowDateTime] AS [FollowDateTime], 
+    [Project1].[RowVersion] AS [RowVersion], 
+    [Project1].[CreateDateTime] AS [CreateDateTime], 
+    [Project1].[IsDeleted] AS [IsDeleted], 
+    [Project1].[Id3] AS [Id1], 
+    [Project1].[Name2] AS [Name1], 
+    [Project1].[PhoneNum1] AS [PhoneNum1], 
+    [Project1].[PasswordHash] AS [PasswordHash], 
+    [Project1].[PasswordSalt] AS [PasswordSalt], 
+    [Project1].[Email] AS [Email], 
+    [Project1].[CityId] AS [CityId], 
+    [Project1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Project1].[CreateDateTime3] AS [CreateDateTime1], 
+    [Project1].[IsDeleted3] AS [IsDeleted1], 
+    [Project1].[Id1] AS [Id2], 
+    [Project1].[CommunityId] AS [CommunityId], 
+    [Project1].[RoomTypeId] AS [RoomTypeId], 
+    [Project1].[Address] AS [Address], 
+    [Project1].[StatusId] AS [StatusId], 
+    [Project1].[Area] AS [Area], 
+    [Project1].[DecorateStatusId] AS [DecorateStatusId], 
+    [Project1].[TotalFloorCount] AS [TotalFloorCount], 
+    [Project1].[FloorIndex] AS [FloorIndex], 
+    [Project1].[TypeId] AS [TypeId], 
+    [Project1].[Direction] AS [Direction], 
+    [Project1].[LookableDateTime] AS [LookableDateTime], 
+    [Project1].[CheckInDateTime] AS [CheckInDateTime], 
+    [Project1].[OwnerName] AS [OwnerName], 
+    [Project1].[OwnerPhoneNum] AS [OwnerPhoneNum], 
+    [Project1].[Description] AS [Description], 
+    [Project1].[CreateDateTime1] AS [CreateDateTime2], 
+    [Project1].[IsDeleted1] AS [IsDeleted2], 
+    [Project1].[Id2] AS [Id3], 
+    [Project1].[Name1] AS [Name2], 
+    [Project1].[RegionId] AS [RegionId], 
+    [Project1].[Location] AS [Location], 
+    [Project1].[Traffic] AS [Traffic], 
+    [Project1].[BuiltYear] AS [BuiltYear], 
+    [Project1].[CreateDateTime2] AS [CreateDateTime3], 
+    [Project1].[IsDeleted2] AS [IsDeleted3], 
+    [Project1].[Id4] AS [Id4], 
+    [Project1].[Name3] AS [Name3], 
+    [Project1].[CityId1] AS [CityId1], 
+    [Project1].[CreateDateTime4] AS [CreateDateTime4], 
+    [Project1].[IsDeleted4] AS [IsDeleted4]
+    FROM ( SELECT [Project1].[Id] AS [Id], [Project1].[UserId] AS [UserId], [Project1].[Name] AS [Name], [Project1].[PhoneNum] AS [PhoneNum], [Project1].[VisitDate] AS [VisitDate], [Project1].[HouseId] AS [HouseId], [Project1].[Status] AS [Status], [Project1].[FollowAdminUserId] AS [FollowAdminUserId], [Project1].[FollowDateTime] AS [FollowDateTime], [Project1].[RowVersion] AS [RowVersion], [Project1].[CreateDateTime] AS [CreateDateTime], [Project1].[IsDeleted] AS [IsDeleted], [Project1].[Id1] AS [Id1], [Project1].[CommunityId] AS [CommunityId], [Project1].[RoomTypeId] AS [RoomTypeId], [Project1].[Address] AS [Address], [Project1].[MonthRent] AS [MonthRent], [Project1].[StatusId] AS [StatusId], [Project1].[Area] AS [Area], [Project1].[DecorateStatusId] AS [DecorateStatusId], [Project1].[TotalFloorCount] AS [TotalFloorCount], [Project1].[FloorIndex] AS [FloorIndex], [Project1].[TypeId] AS [TypeId], [Project1].[Direction] AS [Direction], [Project1].[LookableDateTime] AS [LookableDateTime], [Project1].[CheckInDateTime] AS [CheckInDateTime], [Project1].[OwnerName] AS [OwnerName], [Project1].[OwnerPhoneNum] AS [OwnerPhoneNum], [Project1].[Description] AS [Description], [Project1].[CreateDateTime1] AS [CreateDateTime1], [Project1].[IsDeleted1] AS [IsDeleted1], [Project1].[Id2] AS [Id2], [Project1].[Name1] AS [Name1], [Project1].[RegionId] AS [RegionId], [Project1].[Location] AS [Location], [Project1].[Traffic] AS [Traffic], [Project1].[BuiltYear] AS [BuiltYear], [Project1].[CreateDateTime2] AS [CreateDateTime2], [Project1].[IsDeleted2] AS [IsDeleted2], [Project1].[Id3] AS [Id3], [Project1].[Name2] AS [Name2], [Project1].[PhoneNum1] AS [PhoneNum1], [Project1].[PasswordHash] AS [PasswordHash], [Project1].[PasswordSalt] AS [PasswordSalt], [Project1].[Email] AS [Email], [Project1].[CityId] AS [CityId], [Project1].[LoginErrorTimes] AS [LoginErrorTimes], [Project1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], [Project1].[CreateDateTime3] AS [CreateDateTime3], [Project1].[IsDeleted3] AS [IsDeleted3], [Project1].[Id4] AS [Id4], [Project1].[Name3] AS [Name3], [Project1].[CityId1] AS [CityId1], [Project1].[CreateDateTime4] AS [CreateDateTime4], [Project1].[IsDeleted4] AS [IsDeleted4], row_number() OVER (ORDER BY [Project1].[CreateDateTime] DESC) AS [row_number]
+        FROM ( SELECT 
+            [Filter1].[Id5] AS [Id], 
+            [Filter1].[UserId] AS [UserId], 
+            [Filter1].[Name4] AS [Name], 
+            [Filter1].[PhoneNum2] AS [PhoneNum], 
+            [Filter1].[VisitDate] AS [VisitDate], 
+            [Filter1].[HouseId] AS [HouseId], 
+            [Filter1].[Status] AS [Status], 
+            [Filter1].[FollowAdminUserId] AS [FollowAdminUserId], 
+            [Filter1].[FollowDateTime] AS [FollowDateTime], 
+            [Filter1].[RowVersion] AS [RowVersion], 
+            [Filter1].[CreateDateTime5] AS [CreateDateTime], 
+            [Filter1].[IsDeleted5] AS [IsDeleted], 
+            [Filter1].[Id6] AS [Id1], 
+            [Filter1].[CommunityId] AS [CommunityId], 
+            [Filter1].[RoomTypeId] AS [RoomTypeId], 
+            [Filter1].[Address] AS [Address], 
+            [Filter1].[MonthRent] AS [MonthRent], 
+            [Filter1].[StatusId] AS [StatusId], 
+            [Filter1].[Area] AS [Area], 
+            [Filter1].[DecorateStatusId] AS [DecorateStatusId], 
+            [Filter1].[TotalFloorCount] AS [TotalFloorCount], 
+            [Filter1].[FloorIndex] AS [FloorIndex], 
+            [Filter1].[TypeId] AS [TypeId], 
+            [Filter1].[Direction] AS [Direction], 
+            [Filter1].[LookableDateTime] AS [LookableDateTime], 
+            [Filter1].[CheckInDateTime] AS [CheckInDateTime], 
+            [Filter1].[OwnerName] AS [OwnerName], 
+            [Filter1].[OwnerPhoneNum] AS [OwnerPhoneNum], 
+            [Filter1].[Description] AS [Description], 
+            [Filter1].[CreateDateTime6] AS [CreateDateTime1], 
+            [Filter1].[IsDeleted6] AS [IsDeleted1], 
+            [Filter1].[Id7] AS [Id2], 
+            [Filter1].[Name5] AS [Name1], 
+            [Filter1].[RegionId] AS [RegionId], 
+            [Filter1].[Location] AS [Location], 
+            [Filter1].[Traffic] AS [Traffic], 
+            [Filter1].[BuiltYear] AS [BuiltYear], 
+            [Filter1].[CreateDateTime7] AS [CreateDateTime2], 
+            [Filter1].[IsDeleted7] AS [IsDeleted2], 
+            [Filter1].[Id8] AS [Id3], 
+            [Filter1].[Name6] AS [Name2], 
+            [Filter1].[PhoneNum3] AS [PhoneNum1], 
+            [Filter1].[PasswordHash] AS [PasswordHash], 
+            [Filter1].[PasswordSalt] AS [PasswordSalt], 
+            [Filter1].[Email] AS [Email], 
+            [Filter1].[CityId2] AS [CityId], 
+            [Filter1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Filter1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+            [Filter1].[CreateDateTime8] AS [CreateDateTime3], 
+            [Filter1].[IsDeleted8] AS [IsDeleted3], 
+            [Extent6].[Id] AS [Id4], 
+            [Extent6].[Name] AS [Name3], 
+            [Extent6].[CityId] AS [CityId1], 
+            [Extent6].[CreateDateTime] AS [CreateDateTime4], 
+            [Extent6].[IsDeleted] AS [IsDeleted4]
+            FROM   (SELECT [Extent1].[Id] AS [Id5], [Extent1].[UserId] AS [UserId], [Extent1].[Name] AS [Name4], [Extent1].[PhoneNum] AS [PhoneNum2], [Extent1].[VisitDate] AS [VisitDate], [Extent1].[HouseId] AS [HouseId], [Extent1].[Status] AS [Status], [Extent1].[FollowAdminUserId] AS [FollowAdminUserId], [Extent1].[FollowDateTime] AS [FollowDateTime], [Extent1].[RowVersion] AS [RowVersion], [Extent1].[CreateDateTime] AS [CreateDateTime5], [Extent1].[IsDeleted] AS [IsDeleted5], [Extent2].[Id] AS [Id6], [Extent2].[CommunityId] AS [CommunityId], [Extent2].[RoomTypeId] AS [RoomTypeId], [Extent2].[Address] AS [Address], [Extent2].[MonthRent] AS [MonthRent], [Extent2].[StatusId] AS [StatusId], [Extent2].[Area] AS [Area], [Extent2].[DecorateStatusId] AS [DecorateStatusId], [Extent2].[TotalFloorCount] AS [TotalFloorCount], [Extent2].[FloorIndex] AS [FloorIndex], [Extent2].[TypeId] AS [TypeId], [Extent2].[Direction] AS [Direction], [Extent2].[LookableDateTime] AS [LookableDateTime], [Extent2].[CheckInDateTime] AS [CheckInDateTime], [Extent2].[OwnerName] AS [OwnerName], [Extent2].[OwnerPhoneNum] AS [OwnerPhoneNum], [Extent2].[Description] AS [Description], [Extent2].[CreateDateTime] AS [CreateDateTime6], [Extent2].[IsDeleted] AS [IsDeleted6], [Extent3].[Id] AS [Id7], [Extent3].[Name] AS [Name5], [Extent3].[RegionId] AS [RegionId], [Extent3].[Location] AS [Location], [Extent3].[Traffic] AS [Traffic], [Extent3].[BuiltYear] AS [BuiltYear], [Extent3].[CreateDateTime] AS [CreateDateTime7], [Extent3].[IsDeleted] AS [IsDeleted7], [Extent4].[CityId] AS [CityId3], [Extent5].[Id] AS [Id8], [Extent5].[Name] AS [Name6], [Extent5].[PhoneNum] AS [PhoneNum3], [Extent5].[PasswordHash] AS [PasswordHash], [Extent5].[PasswordSalt] AS [PasswordSalt], [Extent5].[Email] AS [Email], [Extent5].[CityId] AS [CityId2], [Extent5].[LoginErrorTimes] AS [LoginErrorTimes], [Extent5].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], [Extent5].[CreateDateTime] AS [CreateDateTime8], [Extent5].[IsDeleted] AS [IsDeleted8]
+                FROM     [dbo].[T_HouseAppointments] AS [Extent1]
+                INNER JOIN [dbo].[T_Houses] AS [Extent2] ON [Extent1].[HouseId] = [Extent2].[Id]
+                INNER JOIN [dbo].[T_Communities] AS [Extent3] ON [Extent2].[CommunityId] = [Extent3].[Id]
+                INNER JOIN [dbo].[T_Regions] AS [Extent4] ON [Extent3].[RegionId] = [Extent4].[Id]
+                LEFT OUTER JOIN [dbo].[T_AdminUsers] AS [Extent5] ON [Extent1].[FollowAdminUserId] = [Extent5].[Id]
+                WHERE 0 = [Extent1].[IsDeleted] ) AS [Filter1]
+            LEFT OUTER JOIN [dbo].[T_Regions] AS [Extent6] ON [Filter1].[RegionId] = [Extent6].[Id]
+            WHERE ([Filter1].[CityId3] = @p__linq__0) AND ([Filter1].[Status] = @p__linq__1)
+        )  AS [Project1]
+    )  AS [Project1]
+    WHERE [Project1].[row_number] > 1
+    ORDER BY [Project1].[CreateDateTime] DESC
+2017-04-07 22:44:08,537 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:08,537 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:44:08,537 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__1: '未处理' (Type = String, Size = 4000)
+
+2017-04-07 22:44:08,537 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:44:08 +08:00
+ 执行
+2017-04-07 22:44:08,539 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 2 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:44:08,539 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:08,543 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:08 +08:00
+ 关闭了连接
+2017-04-07 22:44:22,114 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:22 +08:00
+ 打开了连接
+2017-04-07 22:44:22,130 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[VisitDate] AS [VisitDate], 
+    [Extent1].[HouseId] AS [HouseId], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[FollowAdminUserId] AS [FollowAdminUserId], 
+    [Extent1].[FollowDateTime] AS [FollowDateTime], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_HouseAppointments] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-04-07 22:44:22,130 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:22,130 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '2' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:44:22,130 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:44:22 +08:00
+ 执行
+2017-04-07 22:44:22,132 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:44:22,132 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:22,136 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:22 +08:00
+ 关闭了连接
+2017-04-07 22:44:22,144 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:22 +08:00
+ 打开了连接
+2017-04-07 22:44:22,144 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:22 +08:00
+ 启动了事务
+2017-04-07 22:44:22,150 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：UPDATE [dbo].[T_HouseAppointments]
+SET [FollowAdminUserId] = @0
+WHERE (([Id] = @1) AND ([RowVersion] = @2))
+SELECT [RowVersion]
+FROM [dbo].[T_HouseAppointments]
+WHERE @@ROWCOUNT > 0 AND [Id] = @1
+2017-04-07 22:44:22,150 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:22,150 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '6' (Type = Int64)
+
+2017-04-07 22:44:22,150 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '2' (Type = Int64)
+
+2017-04-07 22:44:22,150 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @2: 'System.Byte[]' (Type = Binary, Size = 8)
+
+2017-04-07 22:44:22,150 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:44:22 +08:00
+ 执行
+2017-04-07 22:44:22,162 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:44:22,162 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:22,166 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:22 +08:00
+ 提交了事务
+2017-04-07 22:44:22,166 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:22 +08:00
+ 关闭了连接
+2017-04-07 22:44:25,270 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:25 +08:00
+ 打开了连接
+2017-04-07 22:44:25,270 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[VisitDate] AS [VisitDate], 
+    [Extent1].[HouseId] AS [HouseId], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[FollowAdminUserId] AS [FollowAdminUserId], 
+    [Extent1].[FollowDateTime] AS [FollowDateTime], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_HouseAppointments] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-04-07 22:44:25,270 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:25,271 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '2' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:44:25,271 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:44:25 +08:00
+ 执行
+2017-04-07 22:44:25,271 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:44:25,271 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:25,271 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:25 +08:00
+ 关闭了连接
+2017-04-07 22:44:27,844 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:27 +08:00
+ 打开了连接
+2017-04-07 22:44:27,845 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[VisitDate] AS [VisitDate], 
+    [Extent1].[HouseId] AS [HouseId], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[FollowAdminUserId] AS [FollowAdminUserId], 
+    [Extent1].[FollowDateTime] AS [FollowDateTime], 
+    [Extent1].[RowVersion] AS [RowVersion], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_HouseAppointments] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-04-07 22:44:27,845 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:27,845 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '2' (Type = Int64, IsNullable = false)
+
+2017-04-07 22:44:27,845 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/4/7 22:44:27 +08:00
+ 执行
+2017-04-07 22:44:27,845 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-04-07 22:44:27,845 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-04-07 22:44:27,845 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/4/7 22:44:27 +08:00
+ 关闭了连接

@@ -1,0 +1,8 @@
+C:\Users\Administrator\Desktop\zsz\ZSZ.IService\bin\Debug\ZSZ.IService.dll
+C:\Users\Administrator\Desktop\zsz\ZSZ.IService\bin\Debug\ZSZ.IService.pdb
+C:\Users\Administrator\Desktop\zsz\ZSZ.IService\bin\Debug\ZSZ.DTO.dll
+C:\Users\Administrator\Desktop\zsz\ZSZ.IService\bin\Debug\ZSZ.DTO.pdb
+C:\Users\Administrator\Desktop\zsz\ZSZ.IService\obj\Debug\ZSZ.IService.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\zsz\ZSZ.IService\obj\Debug\ZSZ.IService.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\zsz\ZSZ.IService\obj\Debug\ZSZ.IService.dll
+C:\Users\Administrator\Desktop\zsz\ZSZ.IService\obj\Debug\ZSZ.IService.pdb

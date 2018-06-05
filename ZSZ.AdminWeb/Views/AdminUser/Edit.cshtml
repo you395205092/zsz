@@ -1,0 +1,117 @@
+﻿@model ZSZ.AdminWeb.Models.AdminUserEditViewModel
+
+@{
+    ViewBag.Title = "新增操作员";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="formEdit">
+    <input type="hidden" name="Id" value="@Model.AdminUser.Id"/>
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>手机号：</label>
+        <div class="formControls col-5">
+            <input type="text" class="input-text" name="phoneNum" value="@Model.AdminUser.PhoneNum" id="phoneNum" datatype="m" nullmsg="手机号不能为空" />
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>姓名：</label>
+        <div class="formControls col-5">
+            <input type="text" class="input-text" name="name" placeholder="请输入真实姓名" value="@Model.AdminUser.Name" id="name" datatype="*2-10" nullmsg="姓名不能为空" />
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>密码：</label>
+        <div class="formControls col-5">
+            <input type="password" class="input-text" placeholder="留空则为不修改密码" name="password" id="password" datatype="*0-10" />
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>确认密码：</label>
+        <div class="formControls col-5">
+            <input type="password" class="input-text" placeholder="留空则为不修改密码"  name="password2" id="password2" datatype="*0-10" recheck="password" />
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>邮箱：</label>
+        <div class="formControls col-5">
+            <input type="email" class="input-text" value="@Model.AdminUser.Email" name="email" id="email" datatype="e" nullmsg="邮箱不能为空" />
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-3"><span class="c-red">*</span>城市：</label>
+        <div class="formControls col-5">
+           @Html.DropDownList("cityId",new SelectList(Model.Cities,
+                nameof(CityDTO.Id), nameof(CityDTO.Name),Model.AdminUser.CityId))
+        </div>
+        <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+        @foreach (var role in Model.Roles)
+        {
+            <div class="col-xs-12 col-sm-3">
+                <input type="checkbox" checked="@(Model.UserRoleIds.Contains(role.Id))"
+                     id="RoleIds_@role.Id" name="RoleIds" value="@role.Id" />
+                <label for="RoleIds_@role.Id">@role.Name</label>
+            </div>
+        }
+    </div>
+        <input type="button" value="保存" id="btnSave" />
+</form>
+
+@section FooterScript
+{
+    <script type="text/javascript">
+        var saveAjax = function () {
+            var formData = $("#formEdit").serializeArray();
+            $.ajax({
+                url: "/AdminUser/Edit",
+                type: "post",
+                data:formData,
+                dataType: "json",
+                success: function (res) {
+                    if(res.status=="ok")
+                    {
+                        parent.location.reload();//刷新父窗口
+                    }
+                    else
+                    {
+                        alert(res.errorMsg);
+                    }
+                },
+                error: function () { alert("请求出错"); }
+            });
+        };
+        $(function () {
+            var validForm = $("#formEdit").Validform({ tiptype: 2 });
+            $("#btnSave").click(function () {
+                if (validForm.check(false))
+                {
+                    saveAjax();
+                }                
+            });
+            $("#phoneNum").blur(function () {
+                var phoneNum = $(this).val();
+                if (phoneNum.length <= 0) return;
+                $.ajax({
+                    url: "/AdminUser/CheckPhoneNum", dataType: "json", type: "post",
+                    data: { phoneNum: phoneNum,userId:@Model.AdminUser.Id },
+                    success:function(res)
+                    {
+                        if (res.status == "exists")
+                        {
+                            layer.msg('这个手机号已经被其他人使用了!', { icon: 2, time: 2000 });
+                        }
+                    },
+                    error:function()
+                    {
+                        alert("网络通讯错误");
+                    }
+                });
+            });
+        });
+    </script>
+}

@@ -1,0 +1,173 @@
+﻿@model HouseAddViewModel
+@{
+    ViewBag.Title = "新增房源";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- 配置文件 -->
+<script type="text/javascript" src="~/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="~/lib/ueditor/1.4.3/ueditor.all.js"></script>
+
+<form id="formAdd">
+    <div class="row cl">
+        <label class="form-label col-2"><span class="c-red">*</span>区域：</label>
+        <div class="formControls col-2">
+            @Html.DropDownList("RegionId",new SelectList(Model.regions,"Id","Name"))
+        </div>
+        <label class="form-label col-2"><span class="c-red">*</span>小区：</label>
+        <div class="formControls col-2">
+            <select id="communityId" name="communityId"></select>
+        </div>
+        <label class="form-label col-2"><span class="c-red">*</span>房型：</label>
+        <div class="formControls col-2">
+            @Html.DropDownList("RoomTypeId", new SelectList(Model.roomTypes, "Id", "Name"))
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-2"><span class="c-red">*</span>地址：</label>
+        <div class="formControls col-6">
+            <input type="text" class="input-text" name="address" id="address" datatype="*2-50"/>
+        </div>
+        <label class="form-label col-2"><span class="c-red">*</span>月租金：</label>
+        <div class="formControls col-2">
+            <input type="text" class="input-text" name="monthRent" datatype="n" id="monthRent" />
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-2"><span class="c-red">*</span>状态：</label>
+        <div class="formControls col-2">
+            @Html.DropDownList("StatusId", new SelectList(Model.statuses, "Id", "Name"))
+        </div>
+        <label class="form-label col-2"><span class="c-red">*</span>面积：</label>
+        <div class="formControls col-1">
+            <input type="text" class="input-text" datatype="n" id="area" name="area"/>
+        </div>
+        <div class="formControls col-1">元</div>
+        <label class="form-label col-2"><span class="c-red">*</span>装修：</label>
+        <div class="formControls col-2">
+            @Html.DropDownList("DecorateStatusId", new SelectList(Model.decorateStatuses, "Id", "Name"))
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-1"><span class="c-red">*</span>层数：</label>
+        <div class="formControls col-1">
+            <input type="text" class="input-text" datatype="n" id="floorIndex" name="floorIndex"/>
+        </div>
+        <div class="formControls col-1">
+            <input type="text" class="input-text" datatype="n" id="totalFloor" name="totalFloor" />
+        </div>
+        <label class="form-label col-2"><span class="c-red">*</span>朝向：</label>
+        <div class="formControls col-2">
+            <input type="text" class="input-text" id="direction" datatype="*1-10" name="direction" />
+        </div>
+        <div class="formControls col-1">元</div>
+        <label class="form-label col-2"><span class="c-red">*</span>可看房时间：</label>
+        <div class="formControls col-2">
+            <input type="text" class="input-text Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" id="lookableDateTime" name="lookableDateTime" />
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-2"><span class="c-red">*</span>入住时间：</label>
+        <div class="formControls col-2">
+            <input type="text" class="input-text Wdate" id="checkInDateTime" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" name="checkInDateTime" />
+        </div>
+        <label class="form-label col-2"><span class="c-red">*</span>业主姓名：</label>
+        <div class="formControls col-2">
+            <input type="text" class="input-text" datatype="*1-20" id="ownerName" name="ownerName" />
+        </div>
+        <label class="form-label col-2"><span class="c-red">*</span>业主电话：</label>
+        <div class="formControls col-2">
+            <input type="text" class="input-text" datatype="m" id="ownerPhoneNum" name="ownerPhoneNum" />
+        </div>
+    </div>
+    <div class="row cl">
+        <div class="formControls col-2">房屋类型</div>
+        <div class="formControls col-10">
+            @Html.DropDownList("TypeId", new SelectList(Model.types, "Id", "Name"))
+        </div>
+    </div>
+    <div class="row cl">
+        <div class="formControls col-2">房源描述</div>
+        <div class="formControls col-10">
+            <!--<textarea id="description" name="description"></textarea>-->
+            <script id="containerDesc" name="description" type="text/plain">
+            </script>
+        </div>
+    </div>
+    <div class="row cl">
+        <div class="formControls col-2">配套设施</div>
+        @foreach (var att in Model.attachments)
+        {
+        <div class="formControls col-2">
+            <input type="checkbox" id="attachmentIds_@att.Id" name="attachmentIds" value="@att.Id" />
+            <label for="attachmentIds_@att.Id">@att.Name</label>
+        </div>
+        }
+    </div>
+    <div class="row cl">
+        <input type="button" value="保存" id="btnSave" />
+    </div>    
+</form>
+
+@section FooterScript
+{
+    <script type="text/javascript">
+        var ueDesc = UE.getEditor('containerDesc');
+    </script>
+    <script type="text/javascript">
+        var saveAjax = function () {
+            var formData = $("#formAdd").serializeArray();
+            $.ajax({
+                url: "/House/Add",
+                type: "post",
+                data:formData,
+                dataType: "json",
+                success: function (res) {
+                    if(res.status=="ok")
+                    {
+                        parent.location.reload();//刷新父窗口
+                    }
+                    else
+                    {
+                        alert("error"+res.errorMsg);
+                    }
+                },
+                error: function () { alert("请求出错"); }
+            });
+        };
+        var loadCommunites=function(res)
+        {
+            if (res.status == "ok") {
+                $("#communityId").empty();//清除之前添加的小区
+                for (var i = 0; i < res.data.length; i++) {
+                    var item = res.data[i];
+                    $("<option value='" + item.id + "'>" + item.name + "</option>")
+                        .appendTo($("#communityId"));
+                }
+            }
+        }
+
+        $(function () {
+
+            var validForm = $("#formAdd").Validform({tiptype:2});
+            $("#btnSave").click(function () {
+                if (validForm.check(false))
+                {
+                    saveAjax();
+                }                
+            });
+            $("#RegionId").change(function () {
+                $.ajax({
+                    url: "/House/LoadCommunities", dataType: "json", type: "post",
+                    data: { regionId: $(this).val() },
+                    success: loadCommunites,
+                    error:function()
+                    {
+                        alert("加载小区出错");
+                    }
+                });
+            });
+            $("#RegionId").change();//页面刚打开的时候加载第一个选中的区域的小区
+        });
+    </script>
+}

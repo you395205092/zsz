@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD58D117-298A-4E4C-A913-1BC5691B0FD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZSZ.Service</RootNamespace>
+    <AssemblyName>ZSZ.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminLogService.cs" />
+    <Compile Include="AdminUserService.cs" />
+    <Compile Include="AttachmentService.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="CityService.cs" />
+    <Compile Include="CommunityService.cs" />
+    <Compile Include="Entities\AdminLogEntity.cs" />
+    <Compile Include="Entities\AdminUserEntity.cs" />
+    <Compile Include="Entities\AttachmentEntity.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\CityEntity.cs" />
+    <Compile Include="Entities\CommunityEntity.cs" />
+    <Compile Include="Entities\HouseAppointmentEntity.cs" />
+    <Compile Include="Entities\HouseEntity.cs" />
+    <Compile Include="Entities\HousePicEntity.cs" />
+    <Compile Include="Entities\IdNameEntity.cs" />
+    <Compile Include="Entities\PermissionEntity.cs" />
+    <Compile Include="Entities\RegionEntity.cs" />
+    <Compile Include="Entities\RoleEntity.cs" />
+    <Compile Include="Entities\SettingEntity.cs" />
+    <Compile Include="Entities\UserEntity.cs" />
+    <Compile Include="HouseAppointmentService.cs" />
+    <Compile Include="HouseService.cs" />
+    <Compile Include="IdNameService.cs" />
+    <Compile Include="ModelConfig\AdminLogConfig.cs" />
+    <Compile Include="ModelConfig\AdminUserConfig.cs" />
+    <Compile Include="ModelConfig\AttachmentConfig.cs" />
+    <Compile Include="ModelConfig\CityConfig.cs" />
+    <Compile Include="ModelConfig\CommunityConfig.cs" />
+    <Compile Include="ModelConfig\HouseAppointmentConfig.cs" />
+    <Compile Include="ModelConfig\HouseConfig.cs" />
+    <Compile Include="ModelConfig\HousePicConfig.cs" />
+    <Compile Include="ModelConfig\IdNameConfig.cs" />
+    <Compile Include="ModelConfig\PermissionConfig.cs" />
+    <Compile Include="ModelConfig\RegionConfig.cs" />
+    <Compile Include="ModelConfig\RoleConfig.cs" />
+    <Compile Include="ModelConfig\SettingConfig.cs" />
+    <Compile Include="ModelConfig\UserConfig.cs" />
+    <Compile Include="PermissionService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionService.cs" />
+    <Compile Include="RoleService.cs" />
+    <Compile Include="SettingService.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="ZSZDbContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZSZ.Common\ZSZ.Common.csproj">
+      <Project>{57d32a32-2d9c-4905-83ff-845afbdb6eee}</Project>
+      <Name>ZSZ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZSZ.DTO\ZSZ.DTO.csproj">
+      <Project>{941a4a63-44b8-45ea-90fc-74c26ba2c0e4}</Project>
+      <Name>ZSZ.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZSZ.IService\ZSZ.IService.csproj">
+      <Project>{139b27c4-be72-4630-933a-937a2a98c819}</Project>
+      <Name>ZSZ.IService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

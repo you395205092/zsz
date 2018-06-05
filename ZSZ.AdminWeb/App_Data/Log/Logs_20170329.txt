@@ -1,0 +1,3159 @@
+2017-03-29 20:10:19,464 [6] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZSZ.CommonMVC.TrimToDBCModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.CommonMVC\TrimToDBCModelBinder.cs:行号 23
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+2017-03-29 20:10:33,431 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:10:33 +08:00
+ 打开了连接
+2017-03-29 20:10:33,629 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:10:33,629 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:10:33,630 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:10:33 +08:00
+ 执行
+2017-03-29 20:10:33,632 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 2 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:10:33,632 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:10:33,635 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:10:33 +08:00
+ 关闭了连接
+2017-03-29 20:10:50,078 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:10:50 +08:00
+ 打开了连接
+2017-03-29 20:10:50,090 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Permissions] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-29 20:10:50,090 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:10:50,092 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '大家好' (Type = String, Size = 4000)
+
+2017-03-29 20:10:50,092 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:10:50 +08:00
+ 执行
+2017-03-29 20:10:50,092 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:10:50,092 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:10:50,095 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:10:50 +08:00
+ 关闭了连接
+2017-03-29 20:10:50,104 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:10:50 +08:00
+ 打开了连接
+2017-03-29 20:10:50,104 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:10:50 +08:00
+ 启动了事务
+2017-03-29 20:10:50,109 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_Permissions]([Description], [Name], [CreateDateTime], [IsDeleted])
+VALUES (@0, @1, @2, @3)
+SELECT [Id]
+FROM [dbo].[T_Permissions]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+2017-03-29 20:10:50,109 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:10:50,109 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '111' (Type = String, Size = 1024)
+
+2017-03-29 20:10:50,109 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '大家好' (Type = String, Size = 50)
+
+2017-03-29 20:10:50,109 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @2: '2017/3/29 20:10:50' (Type = DateTime2)
+
+2017-03-29 20:10:50,109 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @3: 'False' (Type = Boolean)
+
+2017-03-29 20:10:50,109 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:10:50 +08:00
+ 执行
+2017-03-29 20:10:50,110 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:10:50,110 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:10:50,112 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:10:50 +08:00
+ 提交了事务
+2017-03-29 20:10:50,112 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:10:50 +08:00
+ 关闭了连接
+2017-03-29 20:10:50,248 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:10:50 +08:00
+ 打开了连接
+2017-03-29 20:10:50,248 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:10:50,248 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:10:50,248 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:10:50 +08:00
+ 执行
+2017-03-29 20:10:50,249 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:10:50,249 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:10:50,250 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:10:50 +08:00
+ 关闭了连接
+2017-03-29 20:11:11,889 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:11 +08:00
+ 打开了连接
+2017-03-29 20:11:11,892 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 20:11:11,892 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:11,893 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '39' (Type = Int64, IsNullable = false)
+
+2017-03-29 20:11:11,893 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:11:11 +08:00
+ 执行
+2017-03-29 20:11:11,893 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:11:11,893 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:11,893 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:11 +08:00
+ 关闭了连接
+2017-03-29 20:11:17,889 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:17 +08:00
+ 打开了连接
+2017-03-29 20:11:17,890 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 20:11:17,890 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:17,890 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '39' (Type = Int64, IsNullable = false)
+
+2017-03-29 20:11:17,890 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:11:17 +08:00
+ 执行
+2017-03-29 20:11:17,890 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:11:17,890 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:17,890 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:17 +08:00
+ 关闭了连接
+2017-03-29 20:11:17,891 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:17 +08:00
+ 打开了连接
+2017-03-29 20:11:17,891 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:17 +08:00
+ 启动了事务
+2017-03-29 20:11:17,892 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：UPDATE [dbo].[T_Permissions]
+SET [Name] = @0
+WHERE ([Id] = @1)
+
+2017-03-29 20:11:17,892 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: 'aa光头强' (Type = String, Size = 50)
+
+2017-03-29 20:11:17,892 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '39' (Type = Int64)
+
+2017-03-29 20:11:17,892 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:11:17 +08:00
+ 执行
+2017-03-29 20:11:17,894 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: 1
+
+2017-03-29 20:11:17,894 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:17,894 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:17 +08:00
+ 提交了事务
+2017-03-29 20:11:17,894 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:17 +08:00
+ 关闭了连接
+2017-03-29 20:11:17,906 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:17 +08:00
+ 打开了连接
+2017-03-29 20:11:17,907 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:11:17,907 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:17,907 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:11:17 +08:00
+ 执行
+2017-03-29 20:11:17,907 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:11:17,907 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:17,908 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:17 +08:00
+ 关闭了连接
+2017-03-29 20:11:24,184 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:24 +08:00
+ 打开了连接
+2017-03-29 20:11:24,185 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 20:11:24,185 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:24,185 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '39' (Type = Int64, IsNullable = false)
+
+2017-03-29 20:11:24,185 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:11:24 +08:00
+ 执行
+2017-03-29 20:11:24,186 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:11:24,186 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:24,186 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:24 +08:00
+ 关闭了连接
+2017-03-29 20:11:50,928 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:50 +08:00
+ 打开了连接
+2017-03-29 20:11:50,928 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 20:11:50,928 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:50,928 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '39' (Type = Int64, IsNullable = false)
+
+2017-03-29 20:11:50,929 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:11:50 +08:00
+ 执行
+2017-03-29 20:11:50,929 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:11:50,930 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:50,930 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:50 +08:00
+ 关闭了连接
+2017-03-29 20:11:50,947 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:50 +08:00
+ 打开了连接
+2017-03-29 20:11:50,948 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:11:50,948 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:50,948 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:11:50 +08:00
+ 执行
+2017-03-29 20:11:50,949 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:11:50,949 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:11:50,950 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:11:50 +08:00
+ 关闭了连接
+2017-03-29 20:12:08,949 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:12:08 +08:00
+ 打开了连接
+2017-03-29 20:12:08,951 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 20:12:08,951 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:12:08,951 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '39' (Type = Int64, IsNullable = false)
+
+2017-03-29 20:12:08,951 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:12:08 +08:00
+ 执行
+2017-03-29 20:12:08,952 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:12:08,952 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:12:08,953 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:12:08 +08:00
+ 关闭了连接
+2017-03-29 20:12:48,896 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:12:48 +08:00
+ 打开了连接
+2017-03-29 20:12:48,897 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 20:12:48,897 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:12:48,897 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '39' (Type = Int64, IsNullable = false)
+
+2017-03-29 20:12:48,897 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:12:48 +08:00
+ 执行
+2017-03-29 20:12:48,897 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:12:48,897 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:12:48,898 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:12:48 +08:00
+ 关闭了连接
+2017-03-29 20:12:48,912 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:12:48 +08:00
+ 打开了连接
+2017-03-29 20:12:48,912 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:12:48,912 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:12:48,912 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:12:48 +08:00
+ 执行
+2017-03-29 20:12:48,914 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:12:48,914 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:12:48,915 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:12:48 +08:00
+ 关闭了连接
+2017-03-29 20:13:25,694 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:13:25 +08:00
+ 打开了连接
+2017-03-29 20:13:25,695 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:13:25,695 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:13:25,695 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:13:25 +08:00
+ 执行
+2017-03-29 20:13:25,695 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:13:25,695 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:13:25,696 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:13:25 +08:00
+ 关闭了连接
+2017-03-29 20:13:39,624 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:13:39 +08:00
+ 打开了连接
+2017-03-29 20:13:39,625 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Permissions] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-29 20:13:39,625 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:13:39,625 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: 'null' (Type = String, Size = 4000)
+
+2017-03-29 20:13:39,625 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:13:39 +08:00
+ 执行
+2017-03-29 20:13:39,626 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:13:39,626 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:13:39,626 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:13:39 +08:00
+ 关闭了连接
+2017-03-29 20:13:39,637 [9] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 ZSZ.Service.PermissionService.AddPermission(String permName, String description) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.Service\PermissionService.cs:行号 28
+   在 ZSZ.AdminWeb.Controllers.PermissionController.Add(PermissionAddNewModel model) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.AdminWeb\Controllers\PermissionController.cs:行号 44
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-03-29 20:16:04,597 [18] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:16:04 +08:00
+ 打开了连接
+2017-03-29 20:16:04,597 [18] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:16:04,598 [18] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:16:04,598 [18] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:16:04 +08:00
+ 执行
+2017-03-29 20:16:04,599 [18] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:16:04,599 [18] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:16:04,600 [18] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:16:04 +08:00
+ 关闭了连接
+2017-03-29 20:16:16,133 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:16:16 +08:00
+ 打开了连接
+2017-03-29 20:16:16,134 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:16:16,134 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:16:16,134 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:16:16 +08:00
+ 执行
+2017-03-29 20:16:16,135 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:16:16,135 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:16:16,136 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:16:16 +08:00
+ 关闭了连接
+2017-03-29 20:17:13,963 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:17:13 +08:00
+ 打开了连接
+2017-03-29 20:17:13,964 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Permissions] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-29 20:17:13,964 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:17:13,964 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: 'null' (Type = String, Size = 4000)
+
+2017-03-29 20:17:13,964 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:17:13 +08:00
+ 执行
+2017-03-29 20:17:13,965 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:17:13,965 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:17:13,965 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:17:13 +08:00
+ 关闭了连接
+2017-03-29 20:17:13,966 [12] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 ZSZ.Service.PermissionService.AddPermission(String permName, String description) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.Service\PermissionService.cs:行号 28
+   在 ZSZ.AdminWeb.Controllers.PermissionController.Add(PermissionAddNewModel model) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.AdminWeb\Controllers\PermissionController.cs:行号 44
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-03-29 20:20:26,824 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:20:26 +08:00
+ 打开了连接
+2017-03-29 20:20:26,824 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:20:26,824 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:20:26,825 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:20:26 +08:00
+ 执行
+2017-03-29 20:20:26,832 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 6 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:20:26,832 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:20:26,833 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:20:26 +08:00
+ 关闭了连接
+2017-03-29 20:20:42,761 [20] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:20:42 +08:00
+ 打开了连接
+2017-03-29 20:20:42,762 [20] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:20:42,762 [20] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:20:42,762 [20] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:20:42 +08:00
+ 执行
+2017-03-29 20:20:42,762 [20] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:20:42,762 [20] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:20:42,763 [20] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:20:42 +08:00
+ 关闭了连接
+2017-03-29 20:42:43,506 [15] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:42:43 +08:00
+ 打开了连接
+2017-03-29 20:42:44,601 [15] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:42:44,601 [15] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:42:44,601 [15] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:42:44 +08:00
+ 执行
+2017-03-29 20:42:44,605 [15] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:42:44,605 [15] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:42:44,670 [15] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:42:44 +08:00
+ 关闭了连接
+2017-03-29 20:42:48,585 [36] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:42:48 +08:00
+ 打开了连接
+2017-03-29 20:42:48,605 [36] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:42:48,605 [36] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:42:48,605 [36] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:42:48 +08:00
+ 执行
+2017-03-29 20:42:48,606 [36] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:42:48,606 [36] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:42:48,608 [36] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:42:48 +08:00
+ 关闭了连接
+2017-03-29 20:51:09,994 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:51:09 +08:00
+ 打开了连接
+2017-03-29 20:51:09,996 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:51:09,996 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:51:09,996 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:51:09 +08:00
+ 执行
+2017-03-29 20:51:09,998 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:51:09,998 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:51:09,999 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:51:09 +08:00
+ 关闭了连接
+2017-03-29 20:52:03,184 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:52:03 +08:00
+ 打开了连接
+2017-03-29 20:52:03,184 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:52:03,184 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:52:03,184 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:52:03 +08:00
+ 执行
+2017-03-29 20:52:03,199 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 14 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:52:03,199 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:52:03,199 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:52:03 +08:00
+ 关闭了连接
+2017-03-29 20:54:41,278 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 打开了连接
+2017-03-29 20:54:41,346 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Roles] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-29 20:54:41,346 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,348 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '测试角色' (Type = String, Size = 4000)
+
+2017-03-29 20:54:41,348 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,348 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:54:41,348 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,352 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 关闭了连接
+2017-03-29 20:54:41,436 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 打开了连接
+2017-03-29 20:54:41,440 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 启动了事务
+2017-03-29 20:54:41,564 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_Roles]([Name], [CreateDateTime], [IsDeleted])
+VALUES (@0, @1, @2)
+SELECT [Id]
+FROM [dbo].[T_Roles]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+2017-03-29 20:54:41,564 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,564 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '测试角色' (Type = String, Size = 50)
+
+2017-03-29 20:54:41,564 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '2017/3/29 20:54:41' (Type = DateTime2)
+
+2017-03-29 20:54:41,564 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @2: 'False' (Type = Boolean)
+
+2017-03-29 20:54:41,564 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,565 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:54:41,565 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,581 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 提交了事务
+2017-03-29 20:54:41,582 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 关闭了连接
+2017-03-29 20:54:41,595 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 打开了连接
+2017-03-29 20:54:41,612 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 20:54:41,613 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,613 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '31' (Type = Int64, IsNullable = false)
+
+2017-03-29 20:54:41,613 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,613 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:54:41,613 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,613 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 关闭了连接
+2017-03-29 20:54:41,614 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 打开了连接
+2017-03-29 20:54:41,624 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] IN (cast(3 as bigint), cast(4 as bigint), cast(41 as bigint), cast(42 as bigint), cast(45 as bigint), cast(46 as bigint)))
+2017-03-29 20:54:41,624 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,624 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,626 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:54:41,626 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,626 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 关闭了连接
+2017-03-29 20:54:41,637 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 打开了连接
+2017-03-29 20:54:41,777 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 20:54:41,777 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,777 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '31' (Type = Int64, IsNullable = false)
+
+2017-03-29 20:54:41,777 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,777 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:54:41,777 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,779 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 关闭了连接
+2017-03-29 20:54:41,801 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 打开了连接
+2017-03-29 20:54:41,801 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 启动了事务
+2017-03-29 20:54:41,819 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_RolePermissions]([RoleId], [PermissionId])
+VALUES (@0, @1)
+
+2017-03-29 20:54:41,820 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '31' (Type = Int64)
+
+2017-03-29 20:54:41,820 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '3' (Type = Int64)
+
+2017-03-29 20:54:41,821 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,823 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: 1
+
+2017-03-29 20:54:41,823 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,823 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_RolePermissions]([RoleId], [PermissionId])
+VALUES (@0, @1)
+
+2017-03-29 20:54:41,823 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '31' (Type = Int64)
+
+2017-03-29 20:54:41,823 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '4' (Type = Int64)
+
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: 1
+
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_RolePermissions]([RoleId], [PermissionId])
+VALUES (@0, @1)
+
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '31' (Type = Int64)
+
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '41' (Type = Int64)
+
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: 1
+
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_RolePermissions]([RoleId], [PermissionId])
+VALUES (@0, @1)
+
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '31' (Type = Int64)
+
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '42' (Type = Int64)
+
+2017-03-29 20:54:41,824 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: 1
+
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_RolePermissions]([RoleId], [PermissionId])
+VALUES (@0, @1)
+
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '31' (Type = Int64)
+
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '45' (Type = Int64)
+
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: 1
+
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_RolePermissions]([RoleId], [PermissionId])
+VALUES (@0, @1)
+
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '31' (Type = Int64)
+
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '46' (Type = Int64)
+
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: 1
+
+2017-03-29 20:54:41,825 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,826 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 提交了事务
+2017-03-29 20:54:41,826 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 关闭了连接
+2017-03-29 20:54:41,989 [40] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 打开了连接
+2017-03-29 20:54:41,990 [40] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:54:41,990 [40] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,990 [40] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:54:41 +08:00
+ 执行
+2017-03-29 20:54:41,991 [40] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:54:41,991 [40] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:54:41,991 [40] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:54:41 +08:00
+ 关闭了连接
+2017-03-29 20:55:08,397 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:55:08 +08:00
+ 打开了连接
+2017-03-29 20:55:08,397 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 20:55:08,397 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:55:08,397 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 20:55:08 +08:00
+ 执行
+2017-03-29 20:55:08,399 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 2 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 20:55:08,399 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 20:55:08,401 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 20:55:08 +08:00
+ 关闭了连接
+2017-03-29 21:09:03,737 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:03 +08:00
+ 打开了连接
+2017-03-29 21:09:05,092 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:09:05,092 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:05,095 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:05,095 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:05 +08:00
+ 执行
+2017-03-29 21:09:05,099 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:05,099 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:05,152 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:05 +08:00
+ 关闭了连接
+2017-03-29 21:09:05,158 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:05 +08:00
+ 打开了连接
+2017-03-29 21:09:05,159 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:09:05,159 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:05,159 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:05,159 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:05 +08:00
+ 执行
+2017-03-29 21:09:05,161 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:05,161 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:05,161 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:05 +08:00
+ 关闭了连接
+2017-03-29 21:09:05,192 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:05 +08:00
+ 打开了连接
+2017-03-29 21:09:05,367 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:09:05,367 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:05,367 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:05,367 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:05 +08:00
+ 执行
+2017-03-29 21:09:05,368 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:05,368 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:05,373 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:05 +08:00
+ 关闭了连接
+2017-03-29 21:09:05,407 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:05 +08:00
+ 打开了连接
+2017-03-29 21:09:05,408 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:09:05,409 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:05,409 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:05 +08:00
+ 执行
+2017-03-29 21:09:05,409 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:05,409 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:05,409 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:05 +08:00
+ 关闭了连接
+2017-03-29 21:09:13,032 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:13 +08:00
+ 打开了连接
+2017-03-29 21:09:13,032 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:09:13,032 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:13,032 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '3' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:13,032 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:13 +08:00
+ 执行
+2017-03-29 21:09:13,033 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:13,033 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:13,033 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:13 +08:00
+ 关闭了连接
+2017-03-29 21:09:13,034 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:13 +08:00
+ 打开了连接
+2017-03-29 21:09:13,034 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:09:13,034 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:13,034 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '3' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:13,034 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:13 +08:00
+ 执行
+2017-03-29 21:09:13,035 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:13,035 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:13,035 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:13 +08:00
+ 关闭了连接
+2017-03-29 21:09:13,035 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:13 +08:00
+ 打开了连接
+2017-03-29 21:09:13,036 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:09:13,036 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:13,036 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '3' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:13,036 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:13 +08:00
+ 执行
+2017-03-29 21:09:13,037 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:13,037 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:13,037 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:13 +08:00
+ 关闭了连接
+2017-03-29 21:09:13,038 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:13 +08:00
+ 打开了连接
+2017-03-29 21:09:13,039 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:09:13,039 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:13,039 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:13 +08:00
+ 执行
+2017-03-29 21:09:13,040 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:13,040 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:13,040 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:13 +08:00
+ 关闭了连接
+2017-03-29 21:09:17,379 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:17 +08:00
+ 打开了连接
+2017-03-29 21:09:17,379 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:09:17,380 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:17,380 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:17,380 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:17 +08:00
+ 执行
+2017-03-29 21:09:17,380 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:17,380 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:17,380 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:17 +08:00
+ 关闭了连接
+2017-03-29 21:09:17,381 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:17 +08:00
+ 打开了连接
+2017-03-29 21:09:17,381 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:09:17,381 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:17,381 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:17,381 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:17 +08:00
+ 执行
+2017-03-29 21:09:17,382 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:17,382 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:17,382 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:17 +08:00
+ 关闭了连接
+2017-03-29 21:09:17,382 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:17 +08:00
+ 打开了连接
+2017-03-29 21:09:17,382 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:09:17,382 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:17,382 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '4' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:17,382 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:17 +08:00
+ 执行
+2017-03-29 21:09:17,383 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:17,383 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:17,383 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:17 +08:00
+ 关闭了连接
+2017-03-29 21:09:17,384 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:17 +08:00
+ 打开了连接
+2017-03-29 21:09:17,384 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:09:17,384 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:17,384 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:17 +08:00
+ 执行
+2017-03-29 21:09:17,385 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:17,385 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:17,385 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:17 +08:00
+ 关闭了连接
+2017-03-29 21:09:20,601 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:20 +08:00
+ 打开了连接
+2017-03-29 21:09:20,601 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:09:20,601 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:20,601 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:20,601 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:20 +08:00
+ 执行
+2017-03-29 21:09:20,602 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:20,602 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:20,602 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:20 +08:00
+ 关闭了连接
+2017-03-29 21:09:20,603 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:20 +08:00
+ 打开了连接
+2017-03-29 21:09:20,603 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:09:20,603 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:20,603 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:20,603 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:20 +08:00
+ 执行
+2017-03-29 21:09:20,604 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:20,604 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:20,604 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:20 +08:00
+ 关闭了连接
+2017-03-29 21:09:20,604 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:20 +08:00
+ 打开了连接
+2017-03-29 21:09:20,604 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:09:20,605 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:20,605 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:09:20,605 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:20 +08:00
+ 执行
+2017-03-29 21:09:20,605 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:20,605 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:20,605 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:20 +08:00
+ 关闭了连接
+2017-03-29 21:09:20,606 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:20 +08:00
+ 打开了连接
+2017-03-29 21:09:20,606 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:09:20,606 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:20,606 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:09:20 +08:00
+ 执行
+2017-03-29 21:09:20,606 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:09:20,606 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:09:20,606 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:09:20 +08:00
+ 关闭了连接
+2017-03-29 21:10:13,810 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:10:13 +08:00
+ 打开了连接
+2017-03-29 21:10:13,810 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:10:13,810 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:10:13,811 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:10:13,811 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:10:13 +08:00
+ 执行
+2017-03-29 21:10:13,812 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:10:13,812 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:10:13,812 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:10:13 +08:00
+ 关闭了连接
+2017-03-29 21:10:13,812 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:10:13 +08:00
+ 打开了连接
+2017-03-29 21:10:13,813 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:10:13,813 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:10:13,813 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:10:13,813 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:10:13 +08:00
+ 执行
+2017-03-29 21:10:13,824 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 10 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:10:13,824 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:10:13,824 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:10:13 +08:00
+ 关闭了连接
+2017-03-29 21:10:13,824 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:10:13 +08:00
+ 打开了连接
+2017-03-29 21:10:13,824 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:10:13,825 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:10:13,825 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:10:13,825 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:10:13 +08:00
+ 执行
+2017-03-29 21:10:13,825 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:10:13,825 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:10:13,825 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:10:13 +08:00
+ 关闭了连接
+2017-03-29 21:10:13,825 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:10:13 +08:00
+ 打开了连接
+2017-03-29 21:10:13,826 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:10:13,826 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:10:13,826 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:10:13 +08:00
+ 执行
+2017-03-29 21:10:13,826 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:10:13,826 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:10:13,826 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:10:13 +08:00
+ 关闭了连接
+2017-03-29 21:14:08,567 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:08 +08:00
+ 打开了连接
+2017-03-29 21:14:10,012 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:14:10,012 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:10,013 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:14:10,014 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:14:10 +08:00
+ 执行
+2017-03-29 21:14:10,017 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:14:10,018 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:10,072 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:10 +08:00
+ 关闭了连接
+2017-03-29 21:14:10,077 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:10 +08:00
+ 打开了连接
+2017-03-29 21:14:10,078 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:14:10,078 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:10,079 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:14:10,079 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:14:10 +08:00
+ 执行
+2017-03-29 21:14:10,079 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:14:10,079 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:10,080 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:10 +08:00
+ 关闭了连接
+2017-03-29 21:14:10,107 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:10 +08:00
+ 打开了连接
+2017-03-29 21:14:10,277 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:14:10,277 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:10,277 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:14:10,277 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:14:10 +08:00
+ 执行
+2017-03-29 21:14:10,277 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:14:10,277 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:10,281 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:10 +08:00
+ 关闭了连接
+2017-03-29 21:14:10,310 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:10 +08:00
+ 打开了连接
+2017-03-29 21:14:10,311 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:14:10,311 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:10,311 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:14:10 +08:00
+ 执行
+2017-03-29 21:14:10,312 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:14:10,312 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:10,312 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:10 +08:00
+ 关闭了连接
+2017-03-29 21:14:23,580 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:23 +08:00
+ 打开了连接
+2017-03-29 21:14:23,582 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:14:23,582 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:23,582 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:14:23,582 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:14:23 +08:00
+ 执行
+2017-03-29 21:14:23,583 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:14:23,583 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:23,583 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:23 +08:00
+ 关闭了连接
+2017-03-29 21:14:23,584 [69] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.ArgumentException: id不存在5
+   在 ZSZ.Service.PermissionService.UpdatePermission(Int64 id, String permName, String description) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.Service\PermissionService.cs:行号 138
+   在 ZSZ.AdminWeb.Controllers.PermissionController.Edit(PermissionEditModel model) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.AdminWeb\Controllers\PermissionController.cs:行号 60
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-03-29 21:14:29,881 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:29 +08:00
+ 打开了连接
+2017-03-29 21:14:29,882 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:14:29,882 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:29,882 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:14:29,882 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:14:29 +08:00
+ 执行
+2017-03-29 21:14:29,884 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:14:29,884 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:14:29,885 [69] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:14:29 +08:00
+ 关闭了连接
+2017-03-29 21:14:29,885 [69] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.ArgumentException: id不存在5
+   在 ZSZ.Service.PermissionService.UpdatePermission(Int64 id, String permName, String description) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.Service\PermissionService.cs:行号 138
+   在 ZSZ.AdminWeb.Controllers.PermissionController.Edit(PermissionEditModel model) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.AdminWeb\Controllers\PermissionController.cs:行号 60
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-03-29 21:16:11,966 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:11 +08:00
+ 打开了连接
+2017-03-29 21:16:11,967 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:16:11,967 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:11,967 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:16:11,967 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:16:11 +08:00
+ 执行
+2017-03-29 21:16:12,006 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 39 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:16:12,006 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:12,006 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:12 +08:00
+ 关闭了连接
+2017-03-29 21:16:12,007 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:12 +08:00
+ 打开了连接
+2017-03-29 21:16:12,007 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:16:12,007 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:12,007 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:16:12,007 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:16:12 +08:00
+ 执行
+2017-03-29 21:16:12,036 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 28 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:16:12,036 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:12,036 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:12 +08:00
+ 关闭了连接
+2017-03-29 21:16:12,036 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:12 +08:00
+ 打开了连接
+2017-03-29 21:16:12,037 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:16:12,037 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:12,037 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:16:12,037 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:16:12 +08:00
+ 执行
+2017-03-29 21:16:12,043 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 6 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:16:12,043 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:12,044 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:12 +08:00
+ 关闭了连接
+2017-03-29 21:16:12,044 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:12 +08:00
+ 打开了连接
+2017-03-29 21:16:12,045 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:16:12,045 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:12,045 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:16:12 +08:00
+ 执行
+2017-03-29 21:16:12,046 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:16:12,046 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:12,047 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:12 +08:00
+ 关闭了连接
+2017-03-29 21:16:13,689 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:13 +08:00
+ 打开了连接
+2017-03-29 21:16:13,689 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:16:13,689 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:13,689 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:16:13,689 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:16:13 +08:00
+ 执行
+2017-03-29 21:16:13,690 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:16:13,690 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:13,690 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:13 +08:00
+ 关闭了连接
+2017-03-29 21:16:13,690 [67] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.ArgumentException: id不存在5
+   在 ZSZ.Service.PermissionService.UpdatePermission(Int64 id, String permName, String description) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.Service\PermissionService.cs:行号 138
+   在 ZSZ.AdminWeb.Controllers.PermissionController.Edit(PermissionEditModel model) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.AdminWeb\Controllers\PermissionController.cs:行号 60
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-03-29 21:16:19,103 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:19 +08:00
+ 打开了连接
+2017-03-29 21:16:19,104 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:16:19,104 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:19,104 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:16:19,104 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:16:19 +08:00
+ 执行
+2017-03-29 21:16:19,104 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:16:19,104 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:16:19,104 [64] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:16:19 +08:00
+ 关闭了连接
+2017-03-29 21:16:19,105 [64] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.ArgumentException: id不存在5
+   在 ZSZ.Service.PermissionService.UpdatePermission(Int64 id, String permName, String description) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.Service\PermissionService.cs:行号 138
+   在 ZSZ.AdminWeb.Controllers.PermissionController.Edit(PermissionEditModel model) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.AdminWeb\Controllers\PermissionController.cs:行号 60
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-03-29 21:18:22,579 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:22 +08:00
+ 打开了连接
+2017-03-29 21:18:22,580 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:18:22,581 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:22,581 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:22,581 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:22 +08:00
+ 执行
+2017-03-29 21:18:22,581 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:22,581 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:22,581 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:22 +08:00
+ 关闭了连接
+2017-03-29 21:18:22,582 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:22 +08:00
+ 打开了连接
+2017-03-29 21:18:22,583 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:18:22,583 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:22,583 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:22,583 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:22 +08:00
+ 执行
+2017-03-29 21:18:22,585 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 2 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:22,585 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:22,586 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:22 +08:00
+ 关闭了连接
+2017-03-29 21:18:22,586 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:22 +08:00
+ 打开了连接
+2017-03-29 21:18:22,586 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:18:22,586 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:22,586 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:22,586 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:22 +08:00
+ 执行
+2017-03-29 21:18:22,586 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:22,586 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:22,586 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:22 +08:00
+ 关闭了连接
+2017-03-29 21:18:22,587 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:22 +08:00
+ 打开了连接
+2017-03-29 21:18:22,587 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:18:22,587 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:22,587 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:22 +08:00
+ 执行
+2017-03-29 21:18:22,588 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:22,588 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:22,588 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:22 +08:00
+ 关闭了连接
+2017-03-29 21:18:31,280 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 打开了连接
+2017-03-29 21:18:31,329 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Roles] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0) AND ([Extent1].[Id] <> @p__linq__1)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-29 21:18:31,329 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:31,329 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '收银员' (Type = String, Size = 4000)
+
+2017-03-29 21:18:31,329 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__1: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:31,329 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:31 +08:00
+ 执行
+2017-03-29 21:18:31,332 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 2 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:31,332 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:31,337 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 关闭了连接
+2017-03-29 21:18:31,433 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 打开了连接
+2017-03-29 21:18:31,437 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 启动了事务
+2017-03-29 21:18:31,553 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：UPDATE [dbo].[T_Roles]
+SET [Name] = @0
+WHERE ([Id] = @1)
+
+2017-03-29 21:18:31,555 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '收银员' (Type = String, Size = 50)
+
+2017-03-29 21:18:31,555 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '5' (Type = Int64)
+
+2017-03-29 21:18:31,555 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:31 +08:00
+ 执行
+2017-03-29 21:18:31,559 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 3 毫秒内完成，结果为: 1
+
+2017-03-29 21:18:31,560 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:31,567 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 提交了事务
+2017-03-29 21:18:31,568 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 关闭了连接
+2017-03-29 21:18:31,572 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 打开了连接
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:31 +08:00
+ 执行
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 关闭了连接
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 打开了连接
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:31,573 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:31 +08:00
+ 执行
+2017-03-29 21:18:31,574 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:31,574 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:31,574 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 关闭了连接
+2017-03-29 21:18:31,574 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 打开了连接
+2017-03-29 21:18:31,583 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] IN (cast(3 as bigint), cast(4 as bigint)))
+2017-03-29 21:18:31,583 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:31,583 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:31 +08:00
+ 执行
+2017-03-29 21:18:31,584 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:31,584 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:31,584 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 关闭了连接
+2017-03-29 21:18:31,719 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 打开了连接
+2017-03-29 21:18:31,720 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:18:31,720 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:31,720 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:31 +08:00
+ 执行
+2017-03-29 21:18:31,723 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 2 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:31,723 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:31,724 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:31 +08:00
+ 关闭了连接
+2017-03-29 21:18:33,649 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:33 +08:00
+ 打开了连接
+2017-03-29 21:18:33,649 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:18:33,649 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:33,649 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:33,649 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:33 +08:00
+ 执行
+2017-03-29 21:18:33,650 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:33,650 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:33,650 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:33 +08:00
+ 关闭了连接
+2017-03-29 21:18:33,651 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:33 +08:00
+ 打开了连接
+2017-03-29 21:18:33,651 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:18:33,651 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:33,651 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:33,651 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:33 +08:00
+ 执行
+2017-03-29 21:18:33,653 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:33,653 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:33,653 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:33 +08:00
+ 关闭了连接
+2017-03-29 21:18:33,653 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:33 +08:00
+ 打开了连接
+2017-03-29 21:18:33,653 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:18:33,653 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:33,653 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:33,653 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:33 +08:00
+ 执行
+2017-03-29 21:18:33,654 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:33,654 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:33,654 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:33 +08:00
+ 关闭了连接
+2017-03-29 21:18:33,655 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:33 +08:00
+ 打开了连接
+2017-03-29 21:18:33,655 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:18:33,655 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:33,655 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:33 +08:00
+ 执行
+2017-03-29 21:18:33,656 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:33,656 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:33,656 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:33 +08:00
+ 关闭了连接
+2017-03-29 21:18:37,752 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 打开了连接
+2017-03-29 21:18:37,753 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Roles] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0) AND ([Extent1].[Id] <> @p__linq__1)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-29 21:18:37,753 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,753 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '收银员' (Type = String, Size = 4000)
+
+2017-03-29 21:18:37,753 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__1: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:37,753 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:37 +08:00
+ 执行
+2017-03-29 21:18:37,753 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:37,753 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,753 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 关闭了连接
+2017-03-29 21:18:37,754 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 打开了连接
+2017-03-29 21:18:37,754 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 启动了事务
+2017-03-29 21:18:37,755 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：UPDATE [dbo].[T_Roles]
+SET [Name] = @0
+WHERE ([Id] = @1)
+
+2017-03-29 21:18:37,755 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '收银员' (Type = String, Size = 50)
+
+2017-03-29 21:18:37,755 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '5' (Type = Int64)
+
+2017-03-29 21:18:37,755 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:37 +08:00
+ 执行
+2017-03-29 21:18:37,755 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: 1
+
+2017-03-29 21:18:37,755 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,756 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 提交了事务
+2017-03-29 21:18:37,756 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 关闭了连接
+2017-03-29 21:18:37,756 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 打开了连接
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:37 +08:00
+ 执行
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 关闭了连接
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 打开了连接
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:37,757 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:37 +08:00
+ 执行
+2017-03-29 21:18:37,758 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:37,758 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,758 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 关闭了连接
+2017-03-29 21:18:37,758 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 打开了连接
+2017-03-29 21:18:37,759 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] IN (cast(4 as bigint), cast(39 as bigint), cast(40 as bigint)))
+2017-03-29 21:18:37,759 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,759 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:37 +08:00
+ 执行
+2017-03-29 21:18:37,761 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:37,761 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,761 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 关闭了连接
+2017-03-29 21:18:37,770 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 打开了连接
+2017-03-29 21:18:37,771 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 启动了事务
+2017-03-29 21:18:37,786 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：DELETE [dbo].[T_RolePermissions]
+WHERE (([RoleId] = @0) AND ([PermissionId] = @1))
+2017-03-29 21:18:37,786 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,786 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '5' (Type = Int64)
+
+2017-03-29 21:18:37,786 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '3' (Type = Int64)
+
+2017-03-29 21:18:37,786 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:37 +08:00
+ 执行
+2017-03-29 21:18:37,787 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: 1
+
+2017-03-29 21:18:37,787 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,791 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_RolePermissions]([RoleId], [PermissionId])
+VALUES (@0, @1)
+
+2017-03-29 21:18:37,791 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '5' (Type = Int64)
+
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '39' (Type = Int64)
+
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:37 +08:00
+ 执行
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: 1
+
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_RolePermissions]([RoleId], [PermissionId])
+VALUES (@0, @1)
+
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '5' (Type = Int64)
+
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '40' (Type = Int64)
+
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:37 +08:00
+ 执行
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: 1
+
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 提交了事务
+2017-03-29 21:18:37,792 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 关闭了连接
+2017-03-29 21:18:37,815 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 打开了连接
+2017-03-29 21:18:37,815 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:18:37,815 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,815 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:37 +08:00
+ 执行
+2017-03-29 21:18:37,816 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:37,816 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:37,816 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:37 +08:00
+ 关闭了连接
+2017-03-29 21:18:40,319 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:40 +08:00
+ 打开了连接
+2017-03-29 21:18:40,319 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:18:40,319 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:40,319 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:40,319 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:40 +08:00
+ 执行
+2017-03-29 21:18:40,320 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:40,320 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:40,320 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:40 +08:00
+ 关闭了连接
+2017-03-29 21:18:40,321 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:40 +08:00
+ 打开了连接
+2017-03-29 21:18:40,321 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:18:40,321 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:40,321 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:40,321 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:40 +08:00
+ 执行
+2017-03-29 21:18:40,325 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 3 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:40,325 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:40,325 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:40 +08:00
+ 关闭了连接
+2017-03-29 21:18:40,325 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:40 +08:00
+ 打开了连接
+2017-03-29 21:18:40,325 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 21:18:40,325 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:40,325 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '5' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:18:40,325 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:40 +08:00
+ 执行
+2017-03-29 21:18:40,327 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:40,327 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:40,327 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:40 +08:00
+ 关闭了连接
+2017-03-29 21:18:40,328 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:40 +08:00
+ 打开了连接
+2017-03-29 21:18:40,328 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:18:40,328 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:40,328 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:18:40 +08:00
+ 执行
+2017-03-29 21:18:40,329 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:18:40,329 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:18:40,329 [67] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:18:40 +08:00
+ 关闭了连接
+2017-03-29 21:21:33,717 [60] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:33 +08:00
+ 打开了连接
+2017-03-29 21:21:33,718 [60] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:21:33,718 [60] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:21:33,718 [60] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:21:33 +08:00
+ 执行
+2017-03-29 21:21:33,718 [60] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:21:33,718 [60] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:21:33,719 [60] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:33 +08:00
+ 关闭了连接
+2017-03-29 21:21:35,420 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:35 +08:00
+ 打开了连接
+2017-03-29 21:21:35,420 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:21:35,420 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:21:35,420 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:21:35 +08:00
+ 执行
+2017-03-29 21:21:35,420 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:21:35,420 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:21:35,421 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:35 +08:00
+ 关闭了连接
+2017-03-29 21:21:36,316 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:36 +08:00
+ 打开了连接
+2017-03-29 21:21:36,316 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:21:36,316 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:21:36,316 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:21:36 +08:00
+ 执行
+2017-03-29 21:21:36,317 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:21:36,317 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:21:36,317 [71] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:36 +08:00
+ 关闭了连接
+2017-03-29 21:21:42,712 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:42 +08:00
+ 打开了连接
+2017-03-29 21:21:42,712 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:21:42,712 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:21:42,712 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '6' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:21:42,712 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:21:42 +08:00
+ 执行
+2017-03-29 21:21:42,713 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:21:42,713 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:21:42,713 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:42 +08:00
+ 关闭了连接
+2017-03-29 21:21:42,713 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:42 +08:00
+ 打开了连接
+2017-03-29 21:21:42,713 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:42 +08:00
+ 启动了事务
+2017-03-29 21:21:42,714 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：UPDATE [dbo].[T_Roles]
+SET [IsDeleted] = @0
+WHERE ([Id] = @1)
+
+2017-03-29 21:21:42,714 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: 'True' (Type = Boolean)
+
+2017-03-29 21:21:42,714 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '6' (Type = Int64)
+
+2017-03-29 21:21:42,714 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:21:42 +08:00
+ 执行
+2017-03-29 21:21:42,715 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: 1
+
+2017-03-29 21:21:42,715 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:21:42,718 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:42 +08:00
+ 提交了事务
+2017-03-29 21:21:42,718 [63] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:21:42 +08:00
+ 关闭了连接
+2017-03-29 21:30:38,881 [57] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:38 +08:00
+ 打开了连接
+2017-03-29 21:30:38,997 [57] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:30:38,997 [57] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:30:38,997 [57] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:30:38 +08:00
+ 执行
+2017-03-29 21:30:38,997 [57] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:30:38,997 [57] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:30:39,001 [57] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:39 +08:00
+ 关闭了连接
+2017-03-29 21:30:53,313 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 打开了连接
+2017-03-29 21:30:53,317 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:30:53,317 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:30:53,317 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '7' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:30:53,317 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:30:53 +08:00
+ 执行
+2017-03-29 21:30:53,318 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:30:53,318 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:30:53,318 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 关闭了连接
+2017-03-29 21:30:53,326 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 打开了连接
+2017-03-29 21:30:53,330 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 启动了事务
+2017-03-29 21:30:53,338 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：UPDATE [dbo].[T_Roles]
+SET [IsDeleted] = @0
+WHERE ([Id] = @1)
+
+2017-03-29 21:30:53,338 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: 'True' (Type = Boolean)
+
+2017-03-29 21:30:53,338 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '7' (Type = Int64)
+
+2017-03-29 21:30:53,338 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:30:53 +08:00
+ 执行
+2017-03-29 21:30:53,340 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: 1
+
+2017-03-29 21:30:53,340 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:30:53,341 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 提交了事务
+2017-03-29 21:30:53,341 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 关闭了连接
+2017-03-29 21:30:53,342 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 打开了连接
+2017-03-29 21:30:53,342 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 21:30:53,342 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:30:53,342 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '8' (Type = Int64, IsNullable = false)
+
+2017-03-29 21:30:53,342 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:30:53 +08:00
+ 执行
+2017-03-29 21:30:53,343 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:30:53,343 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:30:53,343 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 关闭了连接
+2017-03-29 21:30:53,343 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 打开了连接
+2017-03-29 21:30:53,343 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 启动了事务
+2017-03-29 21:30:53,344 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：UPDATE [dbo].[T_Roles]
+SET [IsDeleted] = @0
+WHERE ([Id] = @1)
+
+2017-03-29 21:30:53,344 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: 'True' (Type = Boolean)
+
+2017-03-29 21:30:53,344 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '8' (Type = Int64)
+
+2017-03-29 21:30:53,344 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:30:53 +08:00
+ 执行
+2017-03-29 21:30:53,344 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: 1
+
+2017-03-29 21:30:53,344 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:30:53,345 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 提交了事务
+2017-03-29 21:30:53,345 [62] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 关闭了连接
+2017-03-29 21:30:53,495 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 打开了连接
+2017-03-29 21:30:53,495 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:30:53,495 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:30:53,495 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:30:53 +08:00
+ 执行
+2017-03-29 21:30:53,495 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:30:53,495 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:30:53,496 [59] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:30:53 +08:00
+ 关闭了连接
+2017-03-29 21:45:08,659 [53] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:45:08 +08:00
+ 打开了连接
+2017-03-29 21:45:08,680 [53] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:45:08,680 [53] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:45:08,680 [53] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:45:08 +08:00
+ 执行
+2017-03-29 21:45:08,681 [53] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:45:08,681 [53] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:45:08,683 [53] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:45:08 +08:00
+ 关闭了连接
+2017-03-29 21:45:11,194 [70] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:45:11 +08:00
+ 打开了连接
+2017-03-29 21:45:11,207 [70] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Roles] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-29 21:45:11,207 [70] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:45:11,208 [70] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: 'null' (Type = String, Size = 4000)
+
+2017-03-29 21:45:11,208 [70] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:45:11 +08:00
+ 执行
+2017-03-29 21:45:11,208 [70] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:45:11,208 [70] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:45:11,214 [70] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:45:11 +08:00
+ 关闭了连接
+2017-03-29 21:45:11,225 [70] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 ZSZ.Service.RoleService.AddNew(String roleName) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.Service\RoleService.cs:行号 30
+   在 ZSZ.AdminWeb.Controllers.RoleController.Add(RoleAddModel model) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.AdminWeb\Controllers\RoleController.cs:行号 50
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-03-29 21:52:47,995 [47] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:52:47 +08:00
+ 打开了连接
+2017-03-29 21:52:47,996 [47] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:52:47,996 [47] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:52:47,996 [47] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:52:47 +08:00
+ 执行
+2017-03-29 21:52:47,997 [47] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:52:47,997 [47] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:52:47,998 [47] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:52:47 +08:00
+ 关闭了连接
+2017-03-29 21:56:42,737 [45] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:56:42 +08:00
+ 打开了连接
+2017-03-29 21:56:42,737 [45] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:56:42,737 [45] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:56:42,737 [45] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:56:42 +08:00
+ 执行
+2017-03-29 21:56:42,738 [45] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:56:42,738 [45] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:56:42,738 [45] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:56:42 +08:00
+ 关闭了连接
+2017-03-29 21:56:50,022 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:56:50 +08:00
+ 打开了连接
+2017-03-29 21:56:50,022 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 21:56:50,022 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:56:50,022 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:56:50 +08:00
+ 执行
+2017-03-29 21:56:50,023 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:56:50,023 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:56:50,024 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:56:50 +08:00
+ 关闭了连接
+2017-03-29 21:56:51,873 [38] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:56:51 +08:00
+ 打开了连接
+2017-03-29 21:56:51,874 [38] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Roles] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-29 21:56:51,874 [38] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:56:51,874 [38] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: 'null' (Type = String, Size = 4000)
+
+2017-03-29 21:56:51,874 [38] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:56:51 +08:00
+ 执行
+2017-03-29 21:56:51,874 [38] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:56:51,874 [38] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:56:51,874 [38] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:56:51 +08:00
+ 关闭了连接
+2017-03-29 21:56:51,875 [38] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 ZSZ.Service.RoleService.AddNew(String roleName) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.Service\RoleService.cs:行号 30
+   在 ZSZ.AdminWeb.Controllers.RoleController.Add(RoleAddModel model) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.AdminWeb\Controllers\RoleController.cs:行号 50
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-03-29 21:57:46,767 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:57:46 +08:00
+ 打开了连接
+2017-03-29 21:57:46,767 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Roles] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-29 21:57:46,767 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:57:46,767 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: 'null' (Type = String, Size = 4000)
+
+2017-03-29 21:57:46,768 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 21:57:46 +08:00
+ 执行
+2017-03-29 21:57:46,770 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 2 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 21:57:46,770 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 21:57:46,770 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 21:57:46 +08:00
+ 关闭了连接
+2017-03-29 21:57:46,770 [44] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - 出现未处理异常
+System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 ZSZ.Service.RoleService.AddNew(String roleName) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.Service\RoleService.cs:行号 30
+   在 ZSZ.AdminWeb.Controllers.RoleController.Add(RoleAddModel model) 位置 E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.AdminWeb\Controllers\RoleController.cs:行号 50
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-03-29 22:01:06,400 [32] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:01:06 +08:00
+ 打开了连接
+2017-03-29 22:01:06,401 [32] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:01:06,401 [32] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:01:06,401 [32] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:01:06 +08:00
+ 执行
+2017-03-29 22:01:06,402 [32] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:01:06,402 [32] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:01:06,402 [32] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:01:06 +08:00
+ 关闭了连接
+2017-03-29 22:01:58,634 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:01:58 +08:00
+ 打开了连接
+2017-03-29 22:01:58,635 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:01:58,635 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:01:58,635 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:01:58 +08:00
+ 执行
+2017-03-29 22:01:58,637 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 2 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:01:58,638 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:01:58,638 [56] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:01:58 +08:00
+ 关闭了连接
+2017-03-29 22:02:17,108 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:02:17 +08:00
+ 打开了连接
+2017-03-29 22:02:17,108 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:02:17,108 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:02:17,108 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:02:17 +08:00
+ 执行
+2017-03-29 22:02:17,110 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:02:17,110 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:02:17,110 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:02:17 +08:00
+ 关闭了连接
+2017-03-29 22:06:53,683 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:06:53 +08:00
+ 打开了连接
+2017-03-29 22:06:53,683 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:06:53,683 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:06:53,683 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:06:53 +08:00
+ 执行
+2017-03-29 22:06:53,696 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:06:53,696 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:06:53,696 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:06:53 +08:00
+ 关闭了连接
+2017-03-29 22:07:17,683 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:07:17 +08:00
+ 打开了连接
+2017-03-29 22:07:17,683 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:07:17,683 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:07:17,683 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:07:17 +08:00
+ 执行
+2017-03-29 22:07:17,684 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:07:17,684 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:07:17,684 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:07:17 +08:00
+ 关闭了连接
+2017-03-29 22:09:07,316 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:09:07 +08:00
+ 打开了连接
+2017-03-29 22:09:07,316 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:09:07,316 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:09:07,316 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:09:07 +08:00
+ 执行
+2017-03-29 22:09:07,317 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:09:07,317 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:09:07,317 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:09:07 +08:00
+ 关闭了连接
+2017-03-29 22:09:09,383 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:09:09 +08:00
+ 打开了连接
+2017-03-29 22:09:09,383 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:09:09,383 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:09:09,383 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:09:09 +08:00
+ 执行
+2017-03-29 22:09:09,385 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:09:09,386 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:09:09,386 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:09:09 +08:00
+ 关闭了连接
+2017-03-29 22:10:57,095 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:10:57 +08:00
+ 打开了连接
+2017-03-29 22:10:57,096 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:10:57,096 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:10:57,096 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:10:57 +08:00
+ 执行
+2017-03-29 22:10:57,096 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:10:57,096 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:10:57,097 [44] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:10:57 +08:00
+ 关闭了连接
+2017-03-29 22:11:55,297 [31] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:11:55 +08:00
+ 打开了连接
+2017-03-29 22:11:55,298 [31] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:11:55,298 [31] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:11:55,298 [31] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:11:55 +08:00
+ 执行
+2017-03-29 22:11:55,298 [31] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:11:55,298 [31] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:11:55,299 [31] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:11:55 +08:00
+ 关闭了连接
+2017-03-29 22:13:35,802 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:13:35 +08:00
+ 打开了连接
+2017-03-29 22:13:35,802 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:13:35,802 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:13:35,802 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:13:35 +08:00
+ 执行
+2017-03-29 22:13:35,804 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 2 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:13:35,805 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:13:35,805 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:13:35 +08:00
+ 关闭了连接
+2017-03-29 22:16:33,396 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:16:33 +08:00
+ 打开了连接
+2017-03-29 22:16:33,396 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:16:33,396 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:16:33,396 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:16:33 +08:00
+ 执行
+2017-03-29 22:16:33,396 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:16:33,397 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:16:33,397 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:16:33 +08:00
+ 关闭了连接
+2017-03-29 22:18:19,194 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:18:19 +08:00
+ 打开了连接
+2017-03-29 22:18:19,194 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:18:19,194 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:18:19,195 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:18:19 +08:00
+ 执行
+2017-03-29 22:18:19,195 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:18:19,195 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:18:19,196 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:18:19 +08:00
+ 关闭了连接
+2017-03-29 22:18:38,560 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:18:38 +08:00
+ 打开了连接
+2017-03-29 22:18:38,560 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:18:38,560 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:18:38,560 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:18:38 +08:00
+ 执行
+2017-03-29 22:18:38,565 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 4 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:18:38,565 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:18:38,565 [39] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:18:38 +08:00
+ 关闭了连接
+2017-03-29 22:21:50,942 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 打开了连接
+2017-03-29 22:21:50,943 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Roles] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-03-29 22:21:50,943 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,943 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '角色22' (Type = String, Size = 4000)
+
+2017-03-29 22:21:50,943 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:21:50 +08:00
+ 执行
+2017-03-29 22:21:50,943 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:21:50,943 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,943 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 关闭了连接
+2017-03-29 22:21:50,943 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 打开了连接
+2017-03-29 22:21:50,943 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 启动了事务
+2017-03-29 22:21:50,944 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_Roles]([Name], [CreateDateTime], [IsDeleted])
+VALUES (@0, @1, @2)
+SELECT [Id]
+FROM [dbo].[T_Roles]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+2017-03-29 22:21:50,944 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,944 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '角色22' (Type = String, Size = 50)
+
+2017-03-29 22:21:50,944 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '2017/3/29 22:21:50' (Type = DateTime2)
+
+2017-03-29 22:21:50,944 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @2: 'False' (Type = Boolean)
+
+2017-03-29 22:21:50,945 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:21:50 +08:00
+ 执行
+2017-03-29 22:21:50,945 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:21:50,945 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,947 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 提交了事务
+2017-03-29 22:21:50,947 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 关闭了连接
+2017-03-29 22:21:50,949 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 打开了连接
+2017-03-29 22:21:50,949 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-03-29 22:21:50,949 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,949 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '32' (Type = Int64, IsNullable = false)
+
+2017-03-29 22:21:50,949 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:21:50 +08:00
+ 执行
+2017-03-29 22:21:50,950 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:21:50,950 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,950 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 关闭了连接
+2017-03-29 22:21:50,950 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 打开了连接
+2017-03-29 22:21:50,952 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Description] AS [Description], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Permissions] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] IN (cast(3 as bigint), cast(41 as bigint)))
+2017-03-29 22:21:50,952 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,952 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:21:50 +08:00
+ 执行
+2017-03-29 22:21:50,954 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 1 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:21:50,954 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,954 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 关闭了连接
+2017-03-29 22:21:50,955 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 打开了连接
+2017-03-29 22:21:50,959 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[IsDeleted] AS [IsDeleted]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-03-29 22:21:50,959 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,959 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- EntityKeyValue1: '32' (Type = Int64, IsNullable = false)
+
+2017-03-29 22:21:50,959 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:21:50 +08:00
+ 执行
+2017-03-29 22:21:50,959 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:21:50,959 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,960 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 关闭了连接
+2017-03-29 22:21:50,962 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 打开了连接
+2017-03-29 22:21:50,962 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 启动了事务
+2017-03-29 22:21:50,963 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_RolePermissions]([RoleId], [PermissionId])
+VALUES (@0, @1)
+
+2017-03-29 22:21:50,963 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '32' (Type = Int64)
+
+2017-03-29 22:21:50,963 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '3' (Type = Int64)
+
+2017-03-29 22:21:50,963 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:21:50 +08:00
+ 执行
+2017-03-29 22:21:50,963 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: 1
+
+2017-03-29 22:21:50,963 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,963 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：INSERT [dbo].[T_RolePermissions]([RoleId], [PermissionId])
+VALUES (@0, @1)
+
+2017-03-29 22:21:50,963 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @0: '32' (Type = Int64)
+
+2017-03-29 22:21:50,964 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- @1: '41' (Type = Int64)
+
+2017-03-29 22:21:50,964 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:21:50 +08:00
+ 执行
+2017-03-29 22:21:50,964 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: 1
+
+2017-03-29 22:21:50,964 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,964 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 提交了事务
+2017-03-29 22:21:50,964 [24] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 关闭了连接
+2017-03-29 22:21:50,982 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 打开了连接
+2017-03-29 22:21:50,983 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Roles] AS [Extent1]
+    WHERE 0 = [Extent1].[IsDeleted]
+2017-03-29 22:21:50,983 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,983 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 22:21:50 +08:00
+ 执行
+2017-03-29 22:21:50,983 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 22:21:50,983 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 22:21:50,984 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 22:21:50 +08:00
+ 关闭了连接
+2017-03-29 23:04:40,294 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 23:04:40 +08:00
+ 打开了连接
+2017-03-29 23:04:41,365 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2017-03-29 23:04:41,365 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 23:04:41,366 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '189189' (Type = AnsiString, Size = 8000)
+
+2017-03-29 23:04:41,366 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 23:04:41 +08:00
+ 执行
+2017-03-29 23:04:41,368 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 23:04:41,368 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 23:04:41,439 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 23:04:41 +08:00
+ 关闭了连接
+2017-03-29 23:04:41,453 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 23:04:41 +08:00
+ 打开了连接
+2017-03-29 23:04:41,557 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2017-03-29 23:04:41,557 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 23:04:41,557 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '189189' (Type = AnsiString, Size = 8000)
+
+2017-03-29 23:04:41,557 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 23:04:41 +08:00
+ 执行
+2017-03-29 23:04:41,557 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 23:04:41,557 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 23:04:41,561 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 23:04:41 +08:00
+ 关闭了连接
+2017-03-29 23:04:41,561 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 23:04:41 +08:00
+ 打开了连接
+2017-03-29 23:04:41,676 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2017-03-29 23:04:41,676 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 23:04:41,676 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '189189' (Type = AnsiString, Size = 8000)
+
+2017-03-29 23:04:41,676 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 23:04:41 +08:00
+ 执行
+2017-03-29 23:04:41,676 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 23:04:41,676 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 23:04:41,683 [54] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 23:04:41 +08:00
+ 关闭了连接
+2017-03-29 23:04:53,152 [58] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 23:04:53 +08:00
+ 打开了连接
+2017-03-29 23:04:53,153 [58] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2017-03-29 23:04:53,153 [58] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 23:04:53,153 [58] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '1891893' (Type = AnsiString, Size = 8000)
+
+2017-03-29 23:04:53,153 [58] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 23:04:53 +08:00
+ 执行
+2017-03-29 23:04:53,154 [58] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 23:04:53,154 [58] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 23:04:53,154 [58] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 23:04:53 +08:00
+ 关闭了连接
+2017-03-29 23:04:58,124 [42] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 23:04:58 +08:00
+ 打开了连接
+2017-03-29 23:04:58,125 [42] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2017-03-29 23:04:58,125 [42] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 23:04:58,125 [42] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- p__linq__0: '189189' (Type = AnsiString, Size = 8000)
+
+2017-03-29 23:04:58,125 [42] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 正在 2017/3/29 23:04:58 +08:00
+ 执行
+2017-03-29 23:04:58,125 [42] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：-- 已在 0 毫秒内完成，结果为: SqlDataReader
+
+2017-03-29 23:04:58,125 [42] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：
+
+2017-03-29 23:04:58,125 [42] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL：已于 2017/3/29 23:04:58 +08:00
+ 关闭了连接
